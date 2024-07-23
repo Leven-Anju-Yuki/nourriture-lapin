@@ -6,6 +6,13 @@
         <title>Alimentation des Lapins</title>
         <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="manifest" href="manifest.json" />
+        <link
+            class="icone"
+            rel="shortcut icon"
+            type="image/png"
+            href="./assets/img/lapin blanc.png"
+        />
+
         <script>
             if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register("/sw.js").then(
@@ -24,11 +31,22 @@
     </head>
     <body>
         <header>
+            <nav>
+                <ul>
+                    <li><a href="#legumes">Légumes</a></li>
+                    <li><a href="#herbes">Herbes Aromatiques</a></li>
+                    <li><a href="#fruits">Fruits</a></li>
+                    <li><a href="#herbes-graminees">Herbes et Graminées</a></li>
+                    <li><a href="#autres">Autres</a></li>
+                    <li><a href="#eviter">À Éviter</a></li>
+                    <li><a href="#remarques">Remarques</a></li>
+                </ul>
+            </nav>
             <h1>Alimentation des Lapins</h1>
         </header>
         <main>
-            <section>
-                <h2>Légumes</h2>
+            <section id="legumes">
+                <h2>Légumes <img width="10%" src="./assets/img/carrote.png" alt=""></h2>
                 <h3>Légumes-feuilles</h3>
                 <ul>
                     <li>Laitue romaine (éviter la laitue iceberg)</li>
@@ -65,8 +83,8 @@
                     <li>Radis (feuilles et racines, en petites quantités)</li>
                 </ul>
             </section>
-            <section>
-                <h2>Herbes aromatiques</h2>
+            <section id="herbes">
+                <h2>Herbes aromatiques <img width="10%" src="./assets/img/aneth.png" alt=""></h2>
                 <ul>
                     <li>Persil</li>
                     <li>Coriandre</li>
@@ -78,8 +96,8 @@
                     <li>Origan</li>
                 </ul>
             </section>
-            <section>
-                <h2>Fruits (en petites quantités)</h2>
+            <section id="fruits">
+                <h2>Fruits (en petites quantités) <img width="10%" src="./assets/img/fraise.png" alt=""></h2>
                 <ul>
                     <li>Pommes (sans les pépins)</li>
                     <li>Bananes</li>
@@ -96,8 +114,8 @@
                     <li>Pastèque (sans les pépins)</li>
                 </ul>
             </section>
-            <section>
-                <h2>Herbes et graminées</h2>
+            <section id="herbes-graminees">
+                <h2>Herbes et graminées <img width="10%" src="./assets/img/pissenlit.png" alt=""></h2>
                 <ul>
                     <li>Foin de prairie</li>
                     <li>Foin de Timothy (foin de fléole des prés)</li>
@@ -107,8 +125,8 @@
                     <li>Herbe de blé</li>
                 </ul>
             </section>
-            <section>
-                <h2>Autres</h2>
+            <section id="autres">
+                <h2>Autres <img width="10%" src="./assets/img/feuilles-de-framboisiers.png" alt=""></h2>
                 <ul>
                     <li>Branches et feuilles de pommier (non traitées aux pesticides)</li>
                     <li>Branches de saule</li>
@@ -117,9 +135,9 @@
                     <li>Feuilles de mûrier</li>
                 </ul>
             </section>
-            <section>
-                <h2>Aliments à éviter absolument</h2>
-                <ul>
+            <section id="eviter">
+                <h2>Aliments à éviter absolument <img width="10%" src="./assets/img/chocolat.png" alt=""></h2>
+                <ul class="toxic">
                     <li>Chocolat</li>
                     <li>Produits laitiers</li>
                     <li>Aliments sucrés ou gras</li>
@@ -132,7 +150,7 @@
                     <li>Ail</li>
                 </ul>
             </section>
-            <section>
+            <section id="remarques">
                 <h2>Remarques</h2>
                 <ul>
                     <li>
@@ -149,8 +167,11 @@
                 </ul>
             </section>
         </main>
-        <footer>
-            <p>&copy; 2024 Alimentation des Lapins</p>
+        <footer>				
+            <p></p>  Fais avec amour pour tous nos amis poilus <span style="color:red">&#9829</span>
+            <span>fais par Florie</span>
+           
+         <br> &copy; 2024 Alimentation des Lapins</p>
         </footer>
     </body>
 </html>

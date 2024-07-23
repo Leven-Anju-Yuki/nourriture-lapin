@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
@@ -11,11 +11,50 @@ header {
     color: white;
     padding: 20px 0;
     text-align: center;
+    position: relative;
 }
 
-h1 {
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0;
+    background-color: transparent;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #575757;
+    color: #fff;
+}
+
+header h1 {
     margin: 0;
     font-size: 2.5em;
+    padding-top: 60px; /* Ajout de l'espace pour la barre de navigation fixe */
 }
 
 main {
@@ -25,12 +64,16 @@ main {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Espacement pour le contenu sous la barre de navigation */
 }
 
 section {
     margin-bottom: 20px;
 }
-
+/* Ajout du scroll-margin-top aux sections pour compenser la hauteur de la barre de navigation fixe */
+section {
+    scroll-margin-top: 70px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
+}
 h2 {
     border-bottom: 2px solid #6ab04c;
     padding-bottom: 10px;
@@ -56,26 +99,17 @@ ul li {
     border-radius: 4px;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #6ab04c;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+.toxic li {
+    color: red;
+    background: #ffe6e6;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    h3 {
-        font-size: 1.2em;
-    }
+footer {
+    background-color: #6ab04c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
 }
