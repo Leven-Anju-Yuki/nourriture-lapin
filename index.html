@@ -15,6 +15,43 @@
             href="./assets/img/lapin.png"
             media="(max-width: 768px)"
         />
+        <script>
+        function setFavicon() {
+            var faviconPc = document.getElementById("favicon-pc");
+            var faviconMobile = document.getElementById("favicon-mobile");
+
+            if (window.innerWidth <= 768) {
+                faviconPc.remove();
+                document.head.appendChild(faviconMobile);
+            } else {
+                faviconMobile.remove();
+                document.head.appendChild(faviconPc);
+            }
+        }
+        window.addEventListener("resize", setFavicon);
+        window.addEventListener("load", setFavicon);
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/sw.js").then(
+                function (registration) {
+                    console.log(
+                        "Service Worker registration successful with scope: ",
+                        registration.scope
+                    );
+                },
+                function (error) {
+                    console.log("Service Worker registration failed: ", error);
+                }
+            );
+        }
+        let deferredPrompt;
+        const installButton = document.getElementById("installButton");
+
+        window.addEventListener("beforeinstallprompt", (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installButton.style.display = "block";
+        });
+        </script>
     </head>
     <body>
         <header>
@@ -209,41 +246,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        function setFavicon() {
-            var faviconPc = document.getElementById("favicon-pc");
-            var faviconMobile = document.getElementById("favicon-mobile");
-
-            if (window.innerWidth <= 768) {
-                faviconPc.remove();
-                document.head.appendChild(faviconMobile);
-            } else {
-                faviconMobile.remove();
-                document.head.appendChild(faviconPc);
-            }
-        }
-        window.addEventListener("resize", setFavicon);
-        window.addEventListener("load", setFavicon);
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/sw.js").then(
-                function (registration) {
-                    console.log(
-                        "Service Worker registration successful with scope: ",
-                        registration.scope
-                    );
-                },
-                function (error) {
-                    console.log("Service Worker registration failed: ", error);
-                }
-            );
-        }
-        let deferredPrompt;
-        const installButton = document.getElementById("installButton");
-
-        window.addEventListener("beforeinstallprompt", (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installButton.style.display = "block";
-        });
+        
 
         installButton.addEventListener("click", () => {
             if (deferredPrompt) {
