@@ -94,7 +94,26 @@
                         <button class="btn-install ml-2" id="installButton" style="display: none">
                             Installer
                         </button>
-                    </center>
+                    </center>  
+                    <script>
+                        installButton.addEventListener("click", () => {
+                            if (deferredPrompt) {
+                                deferredPrompt.prompt();
+                                deferredPrompt.userChoice.then((choiceResult) => {
+                                    if (choiceResult.outcome === "accepted") {
+                                        console.log("User accepted the A2HS prompt");
+                                    } else {
+                                        console.log("User dismissed the A2HS prompt");
+                                    }
+                                    deferredPrompt = null;
+                                    installButton.style.display = "none";
+                                });
+                            }
+                        });
+                        window.addEventListener("appinstalled", () => {
+                            console.log("PWA was installed");
+                        });
+                    </script>
                 </div>
             </nav>
         </header>
@@ -238,29 +257,10 @@
                 <br>fais par Florie <br> &copy; 2024 Alimentation des Lapins
             </p>
         </footer>
-    </body>
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="/assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        installButton.addEventListener("click", () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === "accepted") {
-                        console.log("User accepted the A2HS prompt");
-                    } else {
-                        console.log("User dismissed the A2HS prompt");
-                    }
-                    deferredPrompt = null;
-                    installButton.style.display = "none";
-                });
-            }
-        });
-
-        window.addEventListener("appinstalled", () => {
-            console.log("PWA was installed");
-        });
-    </script>
+   </body>
 </html>
