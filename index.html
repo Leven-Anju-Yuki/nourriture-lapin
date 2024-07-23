@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Alimentation des Lapins</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="manifest" href="manifest.json" />
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/sw.js").then(
+                    function (registration) {
+                        console.log(
+                            "Service Worker registration successful with scope: ",
+                            registration.scope
+                        );
+                    },
+                    function (error) {
+                        console.log("Service Worker registration failed: ", error);
+                    }
+                );
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Alimentation des Lapins</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Légumes</h2>
+                <h3>Légumes-feuilles</h3>
+                <ul>
+                    <li>Laitue romaine (éviter la laitue iceberg)</li>
+                    <li>Épinards (avec modération)</li>
+                    <li>Cresson</li>
+                    <li>Roquette</li>
+                    <li>Pissenlit</li>
+                    <li>Persil</li>
+                    <li>Coriandre</li>
+                    <li>Menthe</li>
+                    <li>Basilic</li>
+                    <li>Fenouil</li>
+                </ul>
+                <h3>Légumes racines</h3>
+                <ul>
+                    <li>Carottes (en petites quantités)</li>
+                    <li>Navets (feuilles et racines)</li>
+                </ul>
+                <h3>Légumes-fruits</h3>
+                <ul>
+                    <li>Courgettes</li>
+                    <li>Concombres</li>
+                    <li>Poivrons (toutes les couleurs)</li>
+                    <li>Tomates (avec modération, sans les feuilles et les tiges)</li>
+                </ul>
+                <h3>Autres légumes</h3>
+                <ul>
+                    <li>Brocoli (feuilles et tiges, éviter les fleurons en grande quantité)</li>
+                    <li>Céleri</li>
+                    <li>Choux de Bruxelles</li>
+                    <li>Chou frisé (kale)</li>
+                    <li>Endives</li>
+                    <li>Chou-rave (feuilles et bulbe)</li>
+                    <li>Radis (feuilles et racines, en petites quantités)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Herbes aromatiques</h2>
+                <ul>
+                    <li>Persil</li>
+                    <li>Coriandre</li>
+                    <li>Menthe</li>
+                    <li>Basilic</li>
+                    <li>Aneth</li>
+                    <li>Thym</li>
+                    <li>Romarin</li>
+                    <li>Origan</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Fruits (en petites quantités)</h2>
+                <ul>
+                    <li>Pommes (sans les pépins)</li>
+                    <li>Bananes</li>
+                    <li>Fraises</li>
+                    <li>Framboises</li>
+                    <li>Mûres</li>
+                    <li>Myrtilles</li>
+                    <li>Poires (sans les pépins)</li>
+                    <li>Ananas</li>
+                    <li>Mangues</li>
+                    <li>Pêches (sans le noyau)</li>
+                    <li>Prunes (sans le noyau)</li>
+                    <li>Melon</li>
+                    <li>Pastèque (sans les pépins)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Herbes et graminées</h2>
+                <ul>
+                    <li>Foin de prairie</li>
+                    <li>Foin de Timothy (foin de fléole des prés)</li>
+                    <li>Foin de luzerne (surtout pour les jeunes lapins)</li>
+                    <li>Pissenlit</li>
+                    <li>Trèfle</li>
+                    <li>Herbe de blé</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Autres</h2>
+                <ul>
+                    <li>Branches et feuilles de pommier (non traitées aux pesticides)</li>
+                    <li>Branches de saule</li>
+                    <li>Branches de noisetier</li>
+                    <li>Feuilles de framboisier</li>
+                    <li>Feuilles de mûrier</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Aliments à éviter absolument</h2>
+                <ul>
+                    <li>Chocolat</li>
+                    <li>Produits laitiers</li>
+                    <li>Aliments sucrés ou gras</li>
+                    <li>Aliments salés</li>
+                    <li>Pommes de terre</li>
+                    <li>Rhubarbe</li>
+                    <li>Haricots</li>
+                    <li>Avocat</li>
+                    <li>Oignons</li>
+                    <li>Ail</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Remarques</h2>
+                <ul>
+                    <li>
+                        Introduisez les nouveaux aliments progressivement pour éviter les problèmes
+                        digestifs.
+                    </li>
+                    <li>
+                        Veillez à ce que les aliments soient frais et non traités aux pesticides.
+                    </li>
+                    <li>
+                        Assurez-vous que les lapins aient toujours accès à de l'eau fraîche et
+                        propre.
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Alimentation des Lapins</p>
+        </footer>
+    </body>
+</html>
