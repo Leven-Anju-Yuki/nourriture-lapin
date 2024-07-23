@@ -7,14 +7,26 @@
         <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
         <link rel="manifest" href="manifest.json" />
-        <link
-            class="icone"
-            rel="shortcut icon"
-            type="image/png"
-            href="./assets/img/lapin blanc.png"
-        />
+        <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
+        <link id="favicon-mobile" rel="icon" type="image/png" href="./assets/img/lapin.png" media="(max-width: 768px)" />
+    
 
         <script>
+        function setFavicon() {
+            var faviconPc = document.getElementById('favicon-pc');
+            var faviconMobile = document.getElementById('favicon-mobile');
+
+            if (window.innerWidth <= 768) {
+                faviconPc.remove();
+                document.head.appendChild(faviconMobile);
+            } else {
+                faviconMobile.remove();
+                document.head.appendChild(faviconPc);
+            }
+        }
+
+        window.addEventListener('resize', setFavicon);
+        window.addEventListener('load', setFavicon);
             if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register("/sw.js").then(
                     function (registration) {
