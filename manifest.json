@@ -1,8 +1,8 @@
 {
     "name": "Alimentation des Lapins",
-    "short_name": "Lapins",
+    "short_name": "Alimentation des Lapins",
     "description": "Guide de l'alimentation des lapins",
-    "start_url": "/",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007bff",
@@ -19,4 +19,3 @@
       }
     ]
   }
-  
