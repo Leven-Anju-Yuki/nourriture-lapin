@@ -75,10 +75,12 @@ section {
     margin-bottom: 20px;
 }
 /* Ajout du scroll-margin-top aux sections pour compenser la hauteur de la barre de navigation fixe */
-section ,#eau h3 {
+section,
+#eau h3 {
     scroll-margin-top: 140px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
 }
-#eau h3, #legumes h3 {
+#eau h3,
+#legumes h3 {
     scroll-margin-top: 90px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
 }
 #legumes h3 {
@@ -113,6 +115,9 @@ ul li img {
     width: 25px;
     height: 25px;
 }
+h2 img, h3 img{
+    width: 10% !important;
+}
 .btn-download {
     background-color: #007bff;
     color: white;
@@ -146,11 +151,11 @@ ul li img {
     z-index: -100;
     background-attachment: fixed;
     /* Fixe l'image d'arrière-plan */
-    /* background-size: cover; */
-    /* Ajuste la taille de l'image d'arrière-plan pour couvrir le conteneur */
-    /* background-position: center; */
-    /* Centre l'image d'arrière-plan */
-/* } */ 
+/* background-size: cover; */
+/* Ajuste la taille de l'image d'arrière-plan pour couvrir le conteneur */
+/* background-position: center; */
+/* Centre l'image d'arrière-plan */
+/* } */
 footer {
     background-color: #6ab04c;
     color: white;
