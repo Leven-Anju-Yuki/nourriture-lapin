@@ -15,27 +15,48 @@
             href="./assets/img/lapin.png"
             media="(max-width: 768px)"
         />
-    </head>
-    <!-- <style>
-        /* Style pour la barre de navigation secondaire */
-        .navbar-secondary {
-            position: sticky;
-            top: 56px; /* Ajustez selon la hauteur de votre navbar principale */
-            z-index: 1020;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #dee2e6;
-            display: none; /* Par défaut masqué */
-        }
-        .navbar-secondary .nav-link {
-            padding: 10px;
-        }
-        /* Assurez-vous que la navbar secondaire est visible sur mobile */
-        @media (min-width: 768px) {
+        <style>
+            /* Style pour la barre de navigation secondaire */
             .navbar-secondary {
+                position: fixed;
+                top: 56px; /* Ajustez selon la hauteur de votre navbar principale */
+            }
+
+            /* Masquer la barre secondaire sur les petits écrans */
+            @media (max-width: 767px) {
+                .navbar-secondary {
+                    display: none;
+                }
+            }
+
+            /* Assurez-vous que les liens sont correctement espacés */
+            .navbar-secondary .nav-link {
+                padding: 10px;
+            }
+
+            /* Style pour les sous-menus */
+            .nav-submenu {
+                display: none;
+                position: absolute;
+                background-color: #343a40;
+                padding: 10px;
+                border-radius: 5px;
+                z-index: 1040;
+            }
+
+            .nav-item:hover .nav-submenu {
                 display: block;
             }
-        }
-    </style> -->
+
+            .nav-submenu .nav-link {
+                color: #fff;
+            }
+
+            .nav-submenu .nav-link:hover {
+                color: #ffc107;
+            }
+        </style>
+    </head>
     <body>
         <header>
             <!-- Barre de navigation principale -->
@@ -79,7 +100,7 @@
                     type="button"
                     data-toggle="collapse"
                     data-target="#navbarSecondary"
-                    aria-controls="navbarNav"
+                    aria-controls="navbarSecondary"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
@@ -87,8 +108,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSecondary">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item position-relative">
                             <a class="nav-link" href="#legumes">Légumes</a>
+                            <div class="nav-submenu">
+                                <a class="nav-link" href="#legumes-feuilles">Légumes-feuilles</a>
+                                <a class="nav-link" href="#legumes-racines">Légumes racines</a>
+                                <a class="nav-link" href="#legumes-fruits">Légumes-fruits</a>
+                                <a class="nav-link" href="#autres-legumes">Autres légumes</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#herbes">Herbes Aromatiques</a>
@@ -111,126 +138,204 @@
         </header>
         <main>
             <section id="legumes">
-                <h2>Légumes <img width="10%" src="./assets/img/carrote.png" alt="" /></h2>
-                <h3>Légumes-feuilles <img width="10%" src="./assets/img/fenouil.png" alt="" /></h3>
+                <h2>
+                    Légumes <img width="10%" src="./assets/img/legume-racine/carrote.png" alt="" />
+                </h2>
+                <!-- Section Légumes-feuilles -->
+                <h3 id="legumes-feuilles">
+                    Légumes-feuilles <img width="10%" src="./assets/img/fenouil.png" alt="" />
+                </h3>
                 <ul>
-                    <li>Laitue romaine (éviter la laitue iceberg)</li>
-                    <li>Épinards (avec modération)</li>
-                    <li>Cresson</li>
-                    <li>Roquette</li>
-                    <li>Pissenlit</li>
-                    <li>Persil</li>
-                    <li>Coriandre</li>
-                    <li>Menthe</li>
-                    <li>Basilic</li>
-                    <li>Fenouil</li>
+                    <li>
+                        <img src="./assets/img/legume-feuille/laitue.png" alt="" />Laitue romaine
+                        (éviter la laitue iceberg)
+                    </li>
+                    <li>
+                        <img src="./assets/img/legume-feuille/epinard.png" alt="" />Épinards (avec
+                        modération)
+                    </li>
+                    <li><img src="./assets/img/legume-feuille/cresson.png" alt="" />Cresson</li>
+                    <li><img src="./assets/img/legume-feuille/roquette.png" alt="" />Roquette</li>
+                    <li><img src="./assets/img/legume-feuille/pissenlit.png" alt="" />Pissenlit</li>
+                    <li><img src="./assets/img/legume-feuille/persil.png" alt="" />Persil</li>
+                    <li><img src="./assets/img/legume-feuille/coriandre.png" alt="" />Coriandre</li>
+                    <li>
+                        <img src="./assets/img/legume-feuille/menthe-poivree.png" alt="" />Menthe
+                    </li>
+                    <li><img src="./assets/img/legume-feuille/basilic.png" alt="" />Basilic</li>
+                    <li><img src="./assets/img/legume-feuille/fenouil.png" alt="" />Fenouil</li>
                 </ul>
-                <h3>Légumes racines <img width="10%" src="./assets/img/navet.png" alt="" /></h3>
+                <!-- Section Légumes racines -->
+                <h3 id="legumes-racines">
+                    Légumes racines
+                    <img width="10%" src="./assets/img/legume-racine/navet.png" alt="" />
+                </h3>
                 <ul>
-                    <li>Carottes (en petites quantités)</li>
-                    <li>Navets (feuilles et racines)</li>
+                    <li>
+                        <img src="./assets/img/legume-racine/carrote.png" alt="" /> Carottes (en
+                        petites quantités)
+                    </li>
+                    <li>
+                        <img src="./assets/img/legume-racine/navet.png" alt="" /> Navets (feuilles
+                        et racines)
+                    </li>
                 </ul>
-                <h3>Légumes-fruits <img width="10%" src="./assets/img/concombre.png" alt="" /></h3>
+                <!-- Section Légumes-fruits -->
+                <h3 id="legumes-fruits">
+                    Légumes-fruits
+                    <img width="10%" src="./assets/img/legume-fruit/concombre.png" alt="" />
+                </h3>
                 <ul>
-                    <li>Courgettes</li>
-                    <li>Concombres</li>
-                    <li>Poivrons (toutes les couleurs)</li>
-                    <li>Tomates (avec modération, sans les feuilles et les tiges)</li>
+                    <li><img src="./assets/img/legume-fruit/courgette.png" alt="" /> Courgettes</li>
+                    <li><img src="./assets/img/legume-fruit/concombre.png" alt="" /> Concombres</li>
+                    <li>
+                        <img src="./assets/img/legume-fruit/poivron.png" alt="" /> Poivrons (toutes
+                        les couleurs)
+                    </li>
+                    <li>
+                        <img src="./assets/img/legume-fruit/tomate.png" alt="" /> Tomates (avec
+                        modération, sans les feuilles et les tiges)
+                    </li>
                 </ul>
-                <h3>Autres légumes <img width="10%" src="./assets/img/celeri.png" alt="" /></h3>
+                <!-- Section Autres légumes -->
+                <h3 id="autres-legumes">
+                    Autres légumes
+                    <img width="10%" src="./assets/img/autres legumes/celeri.png" alt="" />
+                </h3>
                 <ul>
-                    <li>Brocoli (feuilles et tiges, éviter les fleurons en grande quantité)</li>
-                    <li>Céleri</li>
-                    <li>Choux de Bruxelles</li>
-                    <li>Chou frisé (kale)</li>
-                    <li>Endives</li>
-                    <li>Chou-rave (feuilles et bulbe)</li>
-                    <li>Radis (feuilles et racines, en petites quantités)</li>
+                    <li>
+                        <img src="./assets/img/autres legumes/brocoli.png" alt="" /> Brocoli
+                        (feuilles et tiges, éviter les fleurons en grande quantité)
+                    </li>
+                    <li><img src="./assets/img/autres legumes/celeri.png" alt="" /> Céleri</li>
+                    <li>
+                        <img src="./assets/img/autres legumes/bruxelles.png" alt="" /> Choux de
+                        Bruxelles
+                    </li>
+                    <li>
+                        <img src="./assets/img/autres legumes/chou-frise.png" alt="" /> Chou frisé
+                        (kale)
+                    </li>
+                    <li><img src="./assets/img/autres legumes/endive.png" alt="" /> Endives</li>
+                    <li>
+                        <img src="./assets/img/autres legumes/chou-rave.png" alt="" /> Chou-rave
+                        (feuilles et bulbe)
+                    </li>
+                    <li>
+                        <img src="./assets/img/autres legumes/radis.png" alt="" /> Radis (feuilles
+                        et racines, en petites quantités)
+                    </li>
                 </ul>
             </section>
             <section id="herbes">
-                <h2>Herbes aromatiques <img width="10%" src="./assets/img/aneth.png" alt="" /></h2>
+                <h2>
+                    Herbes aromatiques
+                    <img width="10%" src="./assets/img/herbe-aromatique/aneth.png" alt="" />
+                </h2>
                 <ul>
-                    <li>Persil</li>
-                    <li>Coriandre</li>
-                    <li>Menthe</li>
-                    <li>Basilic</li>
-                    <li>Aneth</li>
-                    <li>Thym</li>
-                    <li>Romarin</li>
-                    <li>Origan</li>
+                    <li><img src="./assets/img/legume-feuille/persil.png" alt="" />Persil</li>
+                    <li><img src="./assets/img/legume-feuille/coriandre.png" alt="" />Coriandre</li>
+                    <li>
+                        <img src="./assets/img/legume-feuille/menthe-poivree.png" alt="" />Menthe
+                    </li>
+                    <li><img src="./assets/img/legume-feuille/basilic.png" alt="" />Basilic</li>
+                    <li>
+                        <img
+                            width="10%"
+                            src="./assets/img/herbe-aromatique/aneth.png"
+                            alt=""
+                        />Aneth
+                    </li>
+                    <li>
+                        <img width="10%" src="./assets/img/herbe-aromatique/thym.png" alt="" />Thym
+                    </li>
+                    <li>
+                        <img
+                            width="10%"
+                            src="./assets/img/herbe-aromatique/romarin.png"
+                            alt=""
+                        />Romarin
+                    </li>
+                    <li>
+                        <img
+                            width="10%"
+                            src="./assets/img/herbe-aromatique/origan.png"
+                            alt=""
+                        />Origan
+                    </li>
                 </ul>
             </section>
             <section id="fruits">
                 <h2>
                     Fruits (en petites quantités)
-                    <img width="10%" src="./assets/img/fraise.png" alt="" />
+                    <img width="10%" src="./assets/img/fruit/fraise.png" alt="" />
                 </h2>
                 <ul>
-                    <li>Pommes (sans les pépins)</li>
-                    <li>Bananes</li>
-                    <li>Fraises</li>
-                    <li>Framboises</li>
-                    <li>Mûres</li>
-                    <li>Myrtilles</li>
-                    <li>Poires (sans les pépins)</li>
-                    <li>Ananas</li>
-                    <li>Mangues</li>
-                    <li>Pêches (sans le noyau)</li>
-                    <li>Prunes (sans le noyau)</li>
-                    <li>Melon</li>
-                    <li>Pastèque (sans les pépins)</li>
+                    <li><img src="./assets/img/fruit/pomme.png" alt="" /> Pommes (sans les pépins)</li>
+                    <li><img src="./assets/img/fruit/banane.png" alt="" /> Bananes</li>
+                    <li><img src="./assets/img/fruit/fraise.png" alt="" /> Fraises</li>
+                    <li><img src="./assets/img/fruit/framboise.png" alt="" /> Framboises</li>
+                    <li><img src="./assets/img/fruit/mure.png" alt="" /> Mûres</li>
+                    <li><img src="./assets/img/fruit/myrtilles.png" alt="" /> Myrtilles</li>
+                    <li><img src="./assets/img/fruit/poire.png" alt="" /> Poires (sans les pépins)</li>
+                    <li><img src="./assets/img/fruit/ananas.png" alt="" /> Ananas</li>
+                    <li><img src="./assets/img/fruit/mangue.png" alt="" /> Mangues</li>
+                    <li><img src="./assets/img/fruit/peche.png" alt="" /> Pêches (sans le noyau)</li>
+                    <li><img src="./assets/img/fruit/prune.png" alt="" /> Prunes (sans le noyau)</li>
+                    <li><img src="./assets/img/fruit/melon.png" alt="" /> Melon</li>
+                    <li><img src="./assets/img/fruit/pasteque.png" alt="" /> Pastèque (sans les pépins)</li>
                 </ul>
             </section>
             <section id="herbes-graminees">
                 <h2>
-                    Herbes et graminées <img width="10%" src="./assets/img/pissenlit.png" alt="" />
+                    Herbes et graminées
+                    <img width="10%" src="./assets/img/legume-feuille/pissenlit.png" alt="" />
                 </h2>
                 <ul>
-                    <li>Foin de prairie</li>
-                    <li>Foin de Timothy (foin de fléole des prés)</li>
-                    <li>Foin de luzerne (surtout pour les jeunes lapins)</li>
-                    <li>Pissenlit</li>
-                    <li>Trèfle</li>
-                    <li>Herbe de blé</li>
+                    <li><img src="./assets/img/Herbes-et-graminées/foins.png" alt="" /> Foin de prairie</li>
+                    <li><img src="./assets/img/Herbes-et-graminées/foins.png" alt="" /> Foin de Timothy (foin de fléole des prés)</li>
+                    <li><img src="./assets/img/Herbes-et-graminées/foins.png" alt="" /> Foin de luzerne (surtout pour les jeunes lapins)</li>
+                    <li><img src="./assets/img/legume-feuille/pissenlit.png" alt="" /> Pissenlit</li>
+                    <li><img src="./assets/img/Herbes-et-graminées/trefle.png" alt="" /> Trèfle</li>
+                    <li><img src="./assets/img/Herbes-et-graminées/ble.png" alt="" /> Herbe de blé</li>
                 </ul>
             </section>
             <section id="autres">
                 <h2>
                     Autres
-                    <img width="10%" src="./assets/img/feuilles-de-framboisiers.png" alt="" />
+                    <img width="10%" src="./assets/img/Autres/feuilles-de-framboisiers.png" alt="" />
                 </h2>
                 <ul>
-                    <li>Branches et feuilles de pommier (non traitées aux pesticides)</li>
-                    <li>Branches de saule</li>
-                    <li>Branches de noisetier</li>
-                    <li>Feuilles de framboisier</li>
-                    <li>Feuilles de mûrier</li>
+                    <li><img src="./assets/img/Autres/branche-de-pommier.png" alt="" /> Branches et feuilles de pommier (non traitées aux pesticides)</li>
+                    <li><img src="./assets/img/Autres/branches-de-saule.png" alt="" /> Branches de saule</li>
+                    <li><img src="./assets/img/Autres/branche-de-noisette.png" alt="" /> Branches de noisetier</li>
+                    <li><img src="./assets/img/Autres/feuilles-de-framboisiers.png" alt="" /> Feuilles de framboisier</li>
+                    <li><img src="./assets/img/Autres/feuille de murier.png" alt="" /> Feuilles de mûrier</li>
                 </ul>
             </section>
             <section id="eviter">
                 <h2>
                     Aliments à éviter absolument
-                    <img width="10%" src="./assets/img/chocolat.png" alt="" />
+                    <img width="10%" src="./assets/img/à-éviter/chocolat.png" alt="" />
                 </h2>
                 <ul class="toxic">
-                    <li>Chocolat</li>
-                    <li>Produits laitiers</li>
-                    <li>Aliments sucrés ou gras</li>
-                    <li>Aliments salés</li>
-                    <li>Pommes de terre</li>
-                    <li>Rhubarbe</li>
-                    <li>Haricots</li>
-                    <li>Avocat</li>
-                    <li>Oignons</li>
-                    <li>Ail</li>
+                    <li><img src="./assets/img/à-éviter/chocolat.png" alt="" /> Chocolat</li>
+                    <li><img src="./assets/img/à-éviter/bouteille-de-lait.png" alt="" /> Produits laitiers</li>
+                    <li><img src="./assets/img/à-éviter/sucre.png" alt="" /> Aliments sucrés ou gras</li>
+                    <li><img src="./assets/img/à-éviter/sel.png" alt="" /> Aliments salés</li>
+                    <li><img src="./assets/img/à-éviter/pomme-de-terre.png" alt="" /> Pommes de terre</li>
+                    <li><img src="./assets/img/à-éviter/rhubarbe.png" alt="" /> Rhubarbe</li>
+                    <li><img src="./assets/img/à-éviter/haricots-verts.png" alt="" /> Haricots</li>
+                    <li><img src="./assets/img/à-éviter/avocat.png" alt="" /> Avocat</li>
+                    <li><img src="./assets/img/à-éviter/oignon.png" alt="" /> Oignons</li>
+                    <li><img src="./assets/img/à-éviter/ail.png" alt="" /> Ail</li>
                 </ul>
             </section>
         </main>
         <footer>
             <p>
-                Fais avec amour pour tous nos amis poilus <b style="color: red">&#9829;</b>
-                <br />fait par Florie <br />
+                Fais avec amour pour tous nos amis poilus <b style="color: red">&#9829;</b><br />
+                fait par Florie <br />
                 &copy; 2024 Alimentation des Lapins
             </p>
         </footer>
@@ -239,6 +344,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script>
+            // Fonction pour changer le favicon
             function setFavicon() {
                 var faviconPc = document.getElementById("favicon-pc");
                 var faviconMobile = document.getElementById("favicon-mobile");
@@ -253,6 +359,8 @@
             }
             window.addEventListener("resize", setFavicon);
             window.addEventListener("load", setFavicon);
+
+            // Enregistrement du Service Worker
             if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register("/sw.js").then(
                     function (registration) {
@@ -266,6 +374,8 @@
                     }
                 );
             }
+
+            // Installation de l'application (PWA)
             let deferredPrompt;
             const installButton = document.getElementById("installButton");
 
@@ -292,6 +402,23 @@
 
             window.addEventListener("appinstalled", () => {
                 console.log("PWA was installed");
+            });
+
+            // Fermer la barre de navigation après avoir cliqué sur un lien
+            document.querySelectorAll(".navbar-primary .nav-link").forEach((link) => {
+                link.addEventListener("click", () => {
+                    if (document.querySelector(".navbar-primary .collapse")) {
+                        $(".navbar-primary .collapse").collapse("hide");
+                    }
+                });
+            });
+
+            document.querySelectorAll(".navbar-secondary .nav-link").forEach((link) => {
+                link.addEventListener("click", () => {
+                    if (document.querySelector(".navbar-secondary .collapse")) {
+                        $(".navbar-secondary .collapse").collapse("hide");
+                    }
+                });
             });
         </script>
     </body>
