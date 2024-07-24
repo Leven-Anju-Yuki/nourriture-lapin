@@ -115,8 +115,8 @@ ul li img {
     width: 25px;
     height: 25px;
 }
-h2 img,
-h3 img {
+.nourritures h2 img,
+.soins h3 img {
     width: 10% !important;
 }
 .btn-download {

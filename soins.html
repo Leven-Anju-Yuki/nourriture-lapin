@@ -1,144 +1,222 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soins et Environnement des Lapins</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="manifest" href="manifest.json" />
-    <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
-    <link id="favicon-mobile" rel="icon" type="image/png" href="./assets/img/lapin.png" media="(max-width: 768px)" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="./index.html"><img  src="./assets/img/lapin blanc.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="nourriture.html">Nourriture</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="eau.html">Eau</a>
-                    </li>
-                    <!-- <li class="nav-item">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Soins et Environnement des Lapins</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+        <link rel="manifest" href="manifest.json" />
+        <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
+        <link
+            id="favicon-mobile"
+            rel="icon"
+            type="image/png"
+            href="./assets/img/lapin.png"
+            media="(max-width: 768px)"
+        />
+    </head>
+    <body class="soins">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="./index.html"
+                    ><img src="./assets/img/lapin blanc.png" alt=""
+                /></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="nourriture.html">Nourriture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eau.html">Eau</a>
+                        </li>
+                        <!-- <li class="nav-item">
                         <a class="nav-link" href="soins.html">Soins et Environnement</a>
                     </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#soins">Soins</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#soins">Soins</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#environnement">Environnement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#jouets">Jouets</a>
+                        </li>
+                    </ul>
+                    <center>
+                        <button class="btn-install ml-2" id="installButton" style="display: none">
+                            Installer
+                        </button>
+                    </center>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="soins">
+                <h2>
+                    Soins
+                    <img
+                        width="5%"
+                        src="./assets/img/Soins-Environnement-et-Jouets/soins.png"
+                        alt=""
+                    />
+                </h2>
+                <ul>
+                    <li>
+                        Assurez-vous que les lapins soient bien toilettés, en particulier les lapins
+                        à poils longs.
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#environnement">Environnement</a>
+                    <li>
+                        Vérifiez régulièrement les griffes des lapins et coupez-les si nécessaire.
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#jouets">Jouets</a>
+                    <li>
+                        Contrôlez régulièrement les dents pour détecter tout signe de malocclusion
+                        ou d'autres problèmes dentaires.
+                    </li>
+                    <li>
+                        Consultez un vétérinaire spécialisé en animaux exotiques pour tout problème
+                        de santé.
                     </li>
                 </ul>
-                <center>
-                    <button class="btn-install ml-2" id="installButton" style="display: none">
-                        Installer
-                    </button>
-                </center>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="soins">
-            <h2>Soins <img src="./assets/img/Soins-Environnement-et-Jouets/soins.png" alt=""></h2>
-            <ul>
-                <li>Assurez-vous que les lapins soient bien toilettés, en particulier les lapins à poils longs.</li>
-                <li>Vérifiez régulièrement les griffes des lapins et coupez-les si nécessaire.</li>
-                <li>Contrôlez régulièrement les dents pour détecter tout signe de malocclusion ou d'autres problèmes dentaires.</li>
-                <li>Consultez un vétérinaire spécialisé en animaux exotiques pour tout problème de santé.</li>
-            </ul>
-        </section>
-        <section id="environnement">
-            <h2>Environnement <img src="./assets/img/Soins-Environnement-et-Jouets/environnement.png" alt=""></h2>
-            <ul>
-                <li>Assurez-vous que l'enclos est spacieux et sécurisé pour permettre aux lapins de se mouvoir librement.</li>
-                <li>Offrez un habitat propre et sec avec un accès constant à du foin et à de l'eau fraîche.</li>
-                <li>Utilisez des litières appropriées, comme des granulés de bois ou des papiers recyclés.</li>
-                <li>Évitez les produits de nettoyage toxiques ou agressifs dans l'aire de vie des lapins.</li>
-                <li>Proposez des espaces de cachette et de jeu pour stimuler l'activité et la curiosité des lapins.</li>
-            </ul>
-        </section>
-        <section id="jouets">
-            <h2>Jouets <img src="./assets/img/Soins-Environnement-et-Jouets/jouet.jfif" alt=""></h2>
-            <ul>
-                <li>Utilisez des jouets en bois non traité, comme des branches ou des jouets achetés en animalerie.</li>
-                <li>Les balles de foin ou les jouets à mâcher sont excellents pour les lapins, aidant à maintenir leurs dents en bonne santé.</li>
-                <li>Évitez les jouets contenant des petits morceaux détachables ou des éléments dangereux.</li>
-                <li>Assurez-vous que les jouets sont adaptés à la taille de votre lapin et ne présentent pas de risques d'étouffement.</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>
-            Fais avec amour pour tous nos amis poilus <b style="color:red">&#9829;</b>
-            <br />fait par Florie <br /> &copy; 2024 Alimentation des Lapins
-        </p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="/assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function setFavicon() {
-            var faviconPc = document.getElementById("favicon-pc");
-            var faviconMobile = document.getElementById("favicon-mobile");
+            </section>
+            <section id="environnement">
+                <h2>
+                    Environnement
+                    <img
+                        width="10%"
+                        src="./assets/img/Soins-Environnement-et-Jouets/environnement.png"
+                        alt=""
+                    />
+                </h2>
+                <ul>
+                    <li>
+                        Assurez-vous que l'enclos est spacieux et sécurisé pour permettre aux lapins
+                        de se mouvoir librement.
+                    </li>
+                    <li>
+                        Offrez un habitat propre et sec avec un accès constant à du foin et à de
+                        l'eau fraîche.
+                    </li>
+                    <li>
+                        Utilisez des litières appropriées, comme des granulés de bois ou des papiers
+                        recyclés.
+                    </li>
+                    <li>
+                        Évitez les produits de nettoyage toxiques ou agressifs dans l'aire de vie
+                        des lapins.
+                    </li>
+                    <li>
+                        Proposez des espaces de cachette et de jeu pour stimuler l'activité et la
+                        curiosité des lapins.
+                    </li>
+                </ul>
+            </section>
+            <section id="jouets">
+                <h2>
+                    Jouets
+                    <img
+                        width="10%"
+                        src="./assets/img/Soins-Environnement-et-Jouets/jouet.jfif"
+                        alt=""
+                    />
+                </h2>
+                <ul>
+                    <li>
+                        Utilisez des jouets en bois non traité, comme des branches ou des jouets
+                        achetés en animalerie.
+                    </li>
+                    <li>
+                        Les balles de foin ou les jouets à mâcher sont excellents pour les lapins,
+                        aidant à maintenir leurs dents en bonne santé.
+                    </li>
+                    <li>
+                        Évitez les jouets contenant des petits morceaux détachables ou des éléments
+                        dangereux.
+                    </li>
+                    <li>
+                        Assurez-vous que les jouets sont adaptés à la taille de votre lapin et ne
+                        présentent pas de risques d'étouffement.
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>
+                Fais avec amour pour tous nos amis poilus <b style="color: red">&#9829;</b>
+                <br />fait par Florie <br />
+                &copy; 2024 Alimentation des Lapins
+            </p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="/assets/js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            function setFavicon() {
+                var faviconPc = document.getElementById("favicon-pc");
+                var faviconMobile = document.getElementById("favicon-mobile");
 
-            if (window.innerWidth <= 768) {
-                faviconPc.remove();
-                document.head.appendChild(faviconMobile);
-            } else {
-                faviconMobile.remove();
-                document.head.appendChild(faviconPc);
-            }
-        }
-        window.addEventListener("resize", setFavicon);
-        window.addEventListener("load", setFavicon);
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/sw.js").then(
-                function (registration) {
-                    console.log("Service Worker registration successful with scope: ", registration.scope);
-                },
-                function (error) {
-                    console.log("Service Worker registration failed: ", error);
+                if (window.innerWidth <= 768) {
+                    faviconPc.remove();
+                    document.head.appendChild(faviconMobile);
+                } else {
+                    faviconMobile.remove();
+                    document.head.appendChild(faviconPc);
                 }
-            );
-        }
-        let deferredPrompt;
-        const installButton = document.getElementById("installButton");
-
-        window.addEventListener("beforeinstallprompt", (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installButton.style.display = "block";
-        });
-
-        installButton.addEventListener("click", () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === "accepted") {
-                        console.log("User accepted the A2HS prompt");
-                    } else {
-                        console.log("User dismissed the A2HS prompt");
-                    }
-                    deferredPrompt = null;
-                    installButton.style.display = "none";
-                });
             }
-        });
+            window.addEventListener("resize", setFavicon);
+            window.addEventListener("load", setFavicon);
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/sw.js").then(
+                    function (registration) {
+                        console.log(
+                            "Service Worker registration successful with scope: ",
+                            registration.scope
+                        );
+                    },
+                    function (error) {
+                        console.log("Service Worker registration failed: ", error);
+                    }
+                );
+            }
+            let deferredPrompt;
+            const installButton = document.getElementById("installButton");
 
-        window.addEventListener("appinstalled", () => {
-            console.log("PWA was installed");
-        });
-    </script>
-</body>
+            window.addEventListener("beforeinstallprompt", (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                installButton.style.display = "block";
+            });
+
+            installButton.addEventListener("click", () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === "accepted") {
+                            console.log("User accepted the A2HS prompt");
+                        } else {
+                            console.log("User dismissed the A2HS prompt");
+                        }
+                        deferredPrompt = null;
+                        installButton.style.display = "none";
+                    });
+                }
+            });
+
+            window.addEventListener("appinstalled", () => {
+                console.log("PWA was installed");
+            });
+        </script>
+    </body>
 </html>
