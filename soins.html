@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil - Alimentation des Lapins</title>
+    <title>Soins et Environnement des Lapins</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="manifest" href="manifest.json" />
@@ -13,26 +13,30 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Alimentation des Lapins</a>
+            <a class="navbar-brand" href="./index.html">Alimentation des Lapins</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="nourriture.html">Nourriture</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="eau.html">Eau</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="soins.html">Soins et Environnement</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#soins">Soins</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="jouets.html">Jouets</a>
-                    </li> 
+                        <a class="nav-link" href="#environnement">Environnement</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#remarques">Remarques</a>
+                        <a class="nav-link" href="#jouets">Jouets</a>
                     </li>
                 </ul>
                 <center>
@@ -44,43 +48,40 @@
         </nav>
     </header>
     <main>
-        <div class="container mt-5 pt-4">
-            <h1>Bienvenue sur Alimentation des Lapins</h1>
-            <p>Votre guide complet pour offrir une alimentation équilibrée et un environnement optimal à vos amis à grandes oreilles.</p>
-            
-            <section id="nourriture">
-                <h2>Alimentation</h2>
-                <p>Découvrez les différents types de nourriture adaptés aux lapins, y compris les légumes, les fruits, et les herbes.</p>
-                <a class="btn btn-primary" href="nourriture.html">En savoir plus</a>
-            </section>
-
-            <section id="eau">
-                <h2>Eau</h2>
-                <p>Apprenez quelles sont les meilleures options d'eau pour garder vos lapins hydratés et en bonne santé.</p>
-                <a class="btn btn-primary" href="eau.html">En savoir plus</a>
-            </section>
-            <section id="soins">
-                <h2>Soins Environnement et Jouets</h2>
-                <p>Des conseils pour assurer le bien-être de vos lapins, y compris les soins quotidiens et l'environnement idéal. Découvrez les jouets et jeux recommandés pour stimuler et divertir vos lapins.</p>
-                <a class="btn btn-primary" href="soins.html">En savoir plus</a>
-            </section>
-            <section id="remarques">
-                <h2>Remarques</h2>
-                <ul>
-                    <li>Introduisez les nouveaux aliments progressivement pour éviter les problèmes digestifs.</li>
-                    <li>Veillez à ce que les aliments soient frais et non traités aux pesticides.</li>
-                    <li>Assurez-vous que les lapins aient toujours accès à de l'eau fraîche et propre.</li>
-                </ul>
-            </section>
-        </div>
+        <section id="soins">
+            <h2>Soins</h2>
+            <ul>
+                <li>Assurez-vous que les lapins soient bien toilettés, en particulier les lapins à poils longs.</li>
+                <li>Vérifiez régulièrement les griffes des lapins et coupez-les si nécessaire.</li>
+                <li>Contrôlez régulièrement les dents pour détecter tout signe de malocclusion ou d'autres problèmes dentaires.</li>
+                <li>Consultez un vétérinaire spécialisé en animaux exotiques pour tout problème de santé.</li>
+            </ul>
+        </section>
+        <section id="environnement">
+            <h2>Environnement</h2>
+            <ul>
+                <li>Assurez-vous que l'enclos est spacieux et sécurisé pour permettre aux lapins de se mouvoir librement.</li>
+                <li>Offrez un habitat propre et sec avec un accès constant à du foin et à de l'eau fraîche.</li>
+                <li>Utilisez des litières appropriées, comme des granulés de bois ou des papiers recyclés.</li>
+                <li>Évitez les produits de nettoyage toxiques ou agressifs dans l'aire de vie des lapins.</li>
+                <li>Proposez des espaces de cachette et de jeu pour stimuler l'activité et la curiosité des lapins.</li>
+            </ul>
+        </section>
+        <section id="jouets">
+            <h2>Jouets</h2>
+            <ul>
+                <li>Utilisez des jouets en bois non traité, comme des branches ou des jouets achetés en animalerie.</li>
+                <li>Les balles de foin ou les jouets à mâcher sont excellents pour les lapins, aidant à maintenir leurs dents en bonne santé.</li>
+                <li>Évitez les jouets contenant des petits morceaux détachables ou des éléments dangereux.</li>
+                <li>Assurez-vous que les jouets sont adaptés à la taille de votre lapin et ne présentent pas de risques d'étouffement.</li>
+            </ul>
+        </section>
     </main>
     <footer>
-        <div class="container text-center py-3">
-            <p>
-                Fais avec amour pour tous nos amis poilus <b style="color:red">&#9829</b>
-                <br> fait par Florie <br> &copy; 2024 Alimentation des Lapins
-            </p>
-        </div>
+        <p>
+            Fais avec amour pour tous nos amis poilus <b style="color:red">&#9829;</b>
+            <br />fait par Florie <br /> &copy; 2024 Alimentation des Lapins
+        </p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="/assets/js/script.js"></script>
