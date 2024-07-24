@@ -116,7 +116,7 @@ ul li img {
     height: 25px;
 }
 .nourritures h2 img,
-.soins h3 img {
+.soins h3 img,.eau h3 img {
     width: 10% !important;
 }
 .btn-download {
@@ -178,7 +178,7 @@ footer {
 @media screen and (max-width: 1024px) {
     h2 img,
     h3 img {
-        width: 5% !important;
+        width: 15% !important;
     }
 }
 /*------------ FIN DE LA PARTIE TABLETTE ------------*/
