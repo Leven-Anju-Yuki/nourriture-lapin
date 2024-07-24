@@ -176,9 +176,9 @@ footer {
 /*------------ DÉBUT DE LA PARTIE TABLETTE ------------*/
 
 @media screen and (max-width: 1024px) {
-    h2 img,
+    /* h2 img,
     h3 img {
         width: 15% ;
-    }
+    } */
 }
 /*------------ FIN DE LA PARTIE TABLETTE ------------*/
