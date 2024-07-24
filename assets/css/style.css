@@ -178,7 +178,7 @@ footer {
 @media screen and (max-width: 1024px) {
     h2 img,
     h3 img {
-        width: 15% !important;
+        width: 15% ;
     }
 }
 /*------------ FIN DE LA PARTIE TABLETTE ------------*/
