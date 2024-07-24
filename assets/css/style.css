@@ -115,7 +115,8 @@ ul li img {
     width: 25px;
     height: 25px;
 }
-h2 img, h3 img{
+h2 img,
+h3 img {
     width: 10% !important;
 }
 .btn-download {
@@ -165,3 +166,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/*------------ DÉBUT DE LA PARTIE TÉLÉPHONE ------------*/
+@media screen and (max-width: 500px) and (max-width: 1000px) {
+}
+
+/*------------ FIN DE LA PARTIE TÉLÉPHONE ------------*/
+
+/*------------ DÉBUT DE LA PARTIE TABLETTE ------------*/
+
+@media screen and (max-width: 1024px) {
+    h2 img,
+    h3 img {
+        width: 5% !important;
+    }
+}
+/*------------ FIN DE LA PARTIE TABLETTE ------------*/
