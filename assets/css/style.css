@@ -37,14 +37,14 @@ nav ul li {
     margin: 0;
     background-color: transparent;
 }
-
+a img {width: 50%;}
 nav ul li a {
     color: white;
     text-decoration: none;
     padding: 5px 10px;
     display: block;
 }
-
+.navbar-brand{width: 10%;}
 nav ul li a:hover,
 nav ul li a:focus {
     background-color: #575757;
