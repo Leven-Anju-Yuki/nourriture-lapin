@@ -116,7 +116,8 @@ ul li img {
     height: 25px;
 }
 .nourritures h2 img,
-.soins h3 img,.eau h3 img {
+.soins h3 img,
+.eau h3 img {
     width: 10% !important;
 }
 .btn-download {
@@ -169,6 +170,15 @@ footer {
 
 /*------------ DÉBUT DE LA PARTIE TÉLÉPHONE ------------*/
 @media screen and (max-width: 500px) and (max-width: 1000px) {
+    a img {
+        width: 100% !important;
+    }
+    .navbar-brand {
+        width: 20%;
+    }
+    .imgh2 {
+        width: 40% !important;
+    }
 }
 
 /*------------ FIN DE LA PARTIE TÉLÉPHONE ------------*/
@@ -180,5 +190,11 @@ footer {
     h3 img {
         width: 15% ;
     } */
+    a img {
+        width: 50% !important;
+    }
+    .imgh2 {
+        width: 40% !important;
+    }
 }
 /*------------ FIN DE LA PARTIE TABLETTE ------------*/
