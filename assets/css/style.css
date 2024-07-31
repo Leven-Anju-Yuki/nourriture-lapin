@@ -169,7 +169,11 @@ ul li img {
     width: 25px;
     height: 25px;
 }
-
+.race ul li img {
+    margin-right: 10px;
+    width: 80px;
+    height: 70px;
+}
 .nourritures h2 img,
 .soins h3 img,
 .eau h3 img {
