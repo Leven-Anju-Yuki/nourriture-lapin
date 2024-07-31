@@ -21,7 +21,7 @@
     --footer-bg-color: #6ab04c;
     --footer-text-color: white;
 }
-[data-theme="dark"] {
+/* [data-theme="dark"] {
     --main-bg-color: #333;
     --main-text-color: #f4f4f9;
     --header-bg-color: #444;
@@ -43,7 +43,7 @@
     --toxic-text-color: #ff6b6b;
     --footer-bg-color: #444;
     --footer-text-color: #f4f4f9;
-}
+} */
 body {
     font-family: "Arial", sans-serif;
     margin: 0;
