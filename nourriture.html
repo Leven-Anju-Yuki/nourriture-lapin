@@ -475,86 +475,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="/assets/js/scroll-up.js"></script>
         <script src="./assets/js/theme-switch.js"></script>
-
+        <script src="/assets/js/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script>
-            // Fonction pour changer le favicon
-            function setFavicon() {
-                var faviconPc = document.getElementById("favicon-pc");
-                var faviconMobile = document.getElementById("favicon-mobile");
-
-                if (window.innerWidth <= 768) {
-                    faviconPc.remove();
-                    document.head.appendChild(faviconMobile);
-                } else {
-                    faviconMobile.remove();
-                    document.head.appendChild(faviconPc);
-                }
-            }
-            window.addEventListener("resize", setFavicon);
-            window.addEventListener("load", setFavicon);
-
-            // Enregistrement du Service Worker
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("/sw.js").then(
-                    function (registration) {
-                        console.log(
-                            "Service Worker registration successful with scope: ",
-                            registration.scope
-                        );
-                    },
-                    function (error) {
-                        console.log("Service Worker registration failed: ", error);
-                    }
-                );
-            }
-
-            // Installation de l'application (PWA)
-            let deferredPrompt;
-            const installButton = document.getElementById("installButton");
-
-            window.addEventListener("beforeinstallprompt", (e) => {
-                e.preventDefault();
-                deferredPrompt = e;
-                installButton.style.display = "block";
-            });
-
-            installButton.addEventListener("click", () => {
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then((choiceResult) => {
-                        if (choiceResult.outcome === "accepted") {
-                            console.log("User accepted the A2HS prompt");
-                        } else {
-                            console.log("User dismissed the A2HS prompt");
-                        }
-                        deferredPrompt = null;
-                        installButton.style.display = "none";
-                    });
-                }
-            });
-
-            window.addEventListener("appinstalled", () => {
-                console.log("PWA was installed");
-            });
-
-            // Fermer la barre de navigation après avoir cliqué sur un lien
-            document.querySelectorAll(".navbar-primary .nav-link").forEach((link) => {
-                link.addEventListener("click", () => {
-                    if (document.querySelector(".navbar-primary .collapse")) {
-                        $(".navbar-primary .collapse").collapse("hide");
-                    }
-                });
-            });
-
-            document.querySelectorAll(".navbar-secondary .nav-link").forEach((link) => {
-                link.addEventListener("click", () => {
-                    if (document.querySelector(".navbar-secondary .collapse")) {
-                        $(".navbar-secondary .collapse").collapse("hide");
-                    }
-                });
-            });
-        </script>
+        
     </body>
 </html>
