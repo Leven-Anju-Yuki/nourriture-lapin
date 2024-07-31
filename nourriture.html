@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <!-- Définition de l'encodage des caractères -->
         <meta charset="UTF-8" />
+        <!-- Réglage de la fenêtre d'affichage pour une meilleure compatibilité mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Nourriture pour Lapins</title>
+        <!-- Titre de la page -->
+        <title>Nourriture pour Lapins - LapinHeureux</title>
+        
+        <!-- Balises Meta SEO -->
+        <meta name="description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
+        <meta name="keywords" content="nourriture pour lapins, alimentation lapins, légumes pour lapins, fruits pour lapins, herbes pour lapins, fleurs séchées, plantes séchées, LapinHeureux" />
+        <meta name="author" content="LapinHeureux" />
+        
+        <!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
+        <meta property="og:title" content="Nourriture pour Lapins - LapinHeureux" />
+        <meta property="og:description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://leven-anju-yuki.github.io/nourriture-lapin/index.html" />
+        <meta property="og:image" content="https://leven-anju-yuki.github.io/nourriture-lapin/assets/img/og-image.jpg" />
+        <meta property="og:site_name" content="LapinHeureux" />
+        
+        <!-- Balises Meta Twitter Card pour les réseaux sociaux -->
+        <!-- <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Nourriture pour Lapins - LapinHeureux" />
+        <meta name="twitter:description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
+        <meta name="twitter:image" content="https://www.votre-site.com/assets/img/twitter-image.png" />
+        <meta name="twitter:site" content="@LapinHeureux" /> -->
+        
+        <!-- Favicon pour les navigateurs de bureau et mobiles -->
+        <!-- <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
+        <link id="favicon-mobile" rel="icon" type="image/png" href="./assets/img/lapin.png" media="(max-width: 768px)" /> -->
+        <link id="favicon-light" rel="icon" href="./assets/img/lapin blanc.png" type="image/png">
+        <link id="favicon-dark" rel="icon" href="./assets/img/lapin.png" type="image/png" media="(prefers-color-scheme: dark)">
+                
+        <!-- Fichier manifest pour les applications web progressives -->
+        <link rel="manifest" href="manifest.json" />
+        
+        <!-- Fichiers CSS pour le style du site -->
         <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-        <link rel="manifest" href="manifest.json" />
-        <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
-        <link
-            id="favicon-mobile"
-            rel="icon"
-            type="image/png"
-            href="./assets/img/lapin.png"
-            media="(max-width: 768px)"
-        />
-        <style>
+        </head>
+                <style>
             /* Style pour la barre de navigation secondaire */
             .navbar-secondary {
                 position: fixed;
@@ -359,8 +385,14 @@
                     </li>
                     <li><img src="./assets/img/fleurs-sechees/lavande.png" alt="" /> Lavande</li>
                     <li><img src="./assets/img/fleurs-sechees/hibiscus.png" alt="" /> Hibiscus</li>
-                    <li><img src="./assets/img/fleurs-sechees/bleuets-bleue.png" alt="" /> Bleuet bleue</li>
-                    <li><img src="./assets/img/fleurs-sechees/bleuet-rouge.jpg" alt="" /> Bleuet rouge</li>
+                    <li>
+                        <img src="./assets/img/fleurs-sechees/bleuets-bleue.png" alt="" /> Bleuet
+                        bleue
+                    </li>
+                    <li>
+                        <img src="./assets/img/fleurs-sechees/bleuet-rouge.jpg" alt="" /> Bleuet
+                        rouge
+                    </li>
                     <li>
                         <img src="./assets/img/fleurs-sechees/paquerette.png" alt="" /> Pâquerette
                     </li>
@@ -417,12 +449,8 @@
                         <img src="./assets/img/à-éviter/bouteille-de-lait.png" alt="" /> Produits
                         laitiers
                     </li>
-                    <li>
-                        <img src="./assets/img/à-éviter/sucre.png" alt="" /> Aliments sucrés 
-                    </li>
-                    <li>
-                        <img src="./assets/img/à-éviter/gras.png" alt="" /> Aliments gras
-                    </li>
+                    <li><img src="./assets/img/à-éviter/sucre.png" alt="" /> Aliments sucrés</li>
+                    <li><img src="./assets/img/à-éviter/gras.png" alt="" /> Aliments gras</li>
                     <li><img src="./assets/img/à-éviter/sel.png" alt="" /> Aliments salés</li>
                     <li>
                         <img src="./assets/img/à-éviter/pomme-de-terre.png" alt="" /> Pommes de
@@ -436,6 +464,7 @@
                 </ul>
             </section>
         </main>
+        <button onclick="scrollToTop()" id="scrollUpBtn" title="Haut de page">↑</button>
         <footer>
             <p>
                 Fais avec amour pour tous nos amis poilus <b style="color: red">&#9829;</b><br />
@@ -444,7 +473,9 @@
             </p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="/assets/js/script.js"></script>
+        <script src="/assets/js/scroll-up.js"></script>
+        <script src="./assets/js/theme-switch.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script>

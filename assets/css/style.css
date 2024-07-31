@@ -1,14 +1,59 @@
+:root {
+    --main-bg-color: #f4f4f9;
+    --main-text-color: #333;
+    --header-bg-color: #6ab04c;
+    --header-text-color: white;
+    --nav-bg-color: #333;
+    --nav-text-color: white;
+    --nav-hover-bg-color: #575757;
+    --content-bg-color: white;
+    --content-shadow-color: rgba(0, 0, 0, 0.1);
+    --scrollup-bg-color: #6ab04c;
+    --scrollup-text-color: black;
+    --scrollup-hover-bg-color: #eafaf1;
+    --scrollup-hover-border-color: #6ab04c;
+    --button-download-bg-color: #007bff;
+    --button-download-hover-bg-color: #0056b3;
+    --button-install-bg-color: #f57f00;
+    --button-install-hover-bg-color: #e64a19;
+    --toxic-bg-color: #ffe6e6;
+    --toxic-text-color: red;
+    --footer-bg-color: #6ab04c;
+    --footer-text-color: white;
+}
+[data-theme="dark"] {
+    --main-bg-color: #333;
+    --main-text-color: #f4f4f9;
+    --header-bg-color: #444;
+    --header-text-color: #f4f4f9;
+    --nav-bg-color: #444;
+    --nav-text-color: #f4f4f9;
+    --nav-hover-bg-color: #575757;
+    --content-bg-color: #555;
+    --content-shadow-color: rgba(255, 255, 255, 0.1);
+    --scrollup-bg-color: #444;
+    --scrollup-text-color: #f4f4f9;
+    --scrollup-hover-bg-color: #666;
+    --scrollup-hover-border-color: #f4f4f9;
+    --button-download-bg-color: #0056b3;
+    --button-download-hover-bg-color: #003d7a;
+    --button-install-bg-color: #e64a19;
+    --button-install-hover-bg-color: #b33900;
+    --toxic-bg-color: #444;
+    --toxic-text-color: #ff6b6b;
+    --footer-bg-color: #444;
+    --footer-text-color: #f4f4f9;
+}
 body {
     font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
 }
 
 header {
-    /* background-color: #6ab04c; */
-    color: white;
+    color: var(--header-text-color);
     padding: 5px 0;
     text-align: center;
     position: relative;
@@ -19,10 +64,10 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
-    color: white;
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--content-shadow-color);
 }
 
 nav ul {
@@ -37,22 +82,26 @@ nav ul li {
     margin: 0;
     background-color: transparent;
 }
+
 a img {
     width: 20%;
 }
+
 nav ul li a {
-    color: white;
+    color: var(--nav-text-color);
     text-decoration: none;
     padding: 5px 10px;
     display: block;
 }
+
 .navbar-brand {
     width: 10%;
 }
+
 nav ul li a:hover,
 nav ul li a:focus {
-    background-color: #575757;
-    color: #fff;
+    background-color: var(--nav-hover-bg-color);
+    color: var(--nav-text-color);
 }
 
 header h1 {
@@ -65,36 +114,40 @@ main {
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--content-bg-color);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--content-shadow-color);
     margin-top: 80px; /* Espacement pour le contenu sous la barre de navigation */
 }
 
 section {
     margin-bottom: 20px;
 }
+
 /* Ajout du scroll-margin-top aux sections pour compenser la hauteur de la barre de navigation fixe */
 section,
 #eau h3 {
     scroll-margin-top: 140px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
 }
+
 #eau h3,
 #legumes h3 {
     scroll-margin-top: 90px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
 }
+
 #legumes h3 {
     scroll-margin-top: 130px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
 }
+
 h2 {
-    border-bottom: 2px solid #6ab04c;
+    border-bottom: 2px solid var(--header-bg-color);
     padding-bottom: 10px;
     margin-bottom: 10px;
     font-size: 1.8em;
 }
 
 h3 {
-    color: #6ab04c;
+    color: var(--header-bg-color);
     font-size: 1.4em;
     margin-top: 20px;
 }
@@ -110,57 +163,77 @@ ul li {
     padding: 10px;
     border-radius: 4px;
 }
+
 ul li img {
     margin-right: 10px;
     width: 25px;
     height: 25px;
 }
+
 .nourritures h2 img,
 .soins h3 img,
 .eau h3 img {
     width: 10% !important;
 }
+
 .btn-download {
-    background-color: #007bff;
+    background-color: var(--button-download-bg-color);
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
 }
+
 .btn-download:hover {
-    background-color: #0056b3;
+    background-color: var(--button-download-hover-bg-color);
     text-decoration: none;
 }
+
 .btn-install {
-    background-color: #f57f00; /* Orange couleur */
+    background-color: var(--button-install-bg-color);
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
 }
+
 .btn-install:hover {
-    background-color: #e64a19; /* Couleur orange plus foncée au survol */
+    background-color: var(--button-install-hover-bg-color);
     text-decoration: none;
 }
+
 .toxic li {
-    color: red;
-    background: #ffe6e6;
+    color: var(--toxic-text-color);
+    background: var(--toxic-bg-color);
 }
-/* .toxic {
-    background: url(../img/attention.png);
-    z-index: -100;
-    background-attachment: fixed;
-    /* Fixe l'image d'arrière-plan */
-/* background-size: cover; */
-/* Ajuste la taille de l'image d'arrière-plan pour couvrir le conteneur */
-/* background-position: center; */
-/* Centre l'image d'arrière-plan */
-/* } */
+
+/* STYLE POUR LE BOUTON SCROLL-UP */
+#scrollUpBtn {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    z-index: 99;
+    font-size: 38px;
+    border: none;
+    outline: none;
+    background-color: var(--scrollup-bg-color); /* Couleur de fond */
+    color: var(--scrollup-text-color); /* Couleur du texte */
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#scrollUpBtn:hover {
+    border: 2px solid var(--scrollup-hover-border-color);
+    background-color: var(--scrollup-hover-bg-color); /* Couleur de fond au survol */
+}
+/* STYLE POUR LE BOUTON SCROLL-UP */
 footer {
-    background-color: #6ab04c;
-    color: white;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
     text-align: center;
     padding: 10px 0;
     /* position: fixed; */
@@ -173,9 +246,11 @@ footer {
     a img {
         width: 100% !important;
     }
+
     .navbar-brand {
         width: 20%;
     }
+
     .imgh2 {
         width: 40% !important;
     }
@@ -184,7 +259,6 @@ footer {
 /*------------ FIN DE LA PARTIE TÉLÉPHONE ------------*/
 
 /*------------ DÉBUT DE LA PARTIE TABLETTE ------------*/
-
 @media screen and (max-width: 1024px) {
     /* h2 img,
     h3 img {
@@ -193,8 +267,10 @@ footer {
     a img {
         width: 50% !important;
     }
+
     .imgh2 {
         width: 40% !important;
     }
 }
+
 /*------------ FIN DE LA PARTIE TABLETTE ------------*/

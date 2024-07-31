@@ -1,136 +1,223 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eau pour Lapins</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="manifest" href="manifest.json" />
-    <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
-    <link id="favicon-mobile" rel="icon" type="image/png" href="./assets/img/lapin.png" media="(max-width: 768px)" />
-</head>
-<body class="eau">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="./index.html"><img src="./assets/img/lapin blanc.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="nourriture.html">Nourriture</a>
-                    </li>
-                    <!-- <li class="nav-item">
+    <head>
+        <!-- Définition de l'encodage des caractères -->
+        <meta charset="UTF-8" />
+        <!-- Réglage de la fenêtre d'affichage pour une meilleure compatibilité mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Titre de la page -->
+        <title>Nourriture pour Lapins - LapinHeureux</title>
+        
+        <!-- Balises Meta SEO -->
+        <meta name="description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
+        <meta name="keywords" content="nourriture pour lapins, alimentation lapins, légumes pour lapins, fruits pour lapins, herbes pour lapins, fleurs séchées, plantes séchées, LapinHeureux" />
+        <meta name="author" content="LapinHeureux" />
+        
+        <!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
+        <meta property="og:title" content="Nourriture pour Lapins - LapinHeureux" />
+        <meta property="og:description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://leven-anju-yuki.github.io/nourriture-lapin/index.html" />
+        <meta property="og:image" content="https://leven-anju-yuki.github.io/nourriture-lapin/assets/img/og-image.jpg" />
+        <meta property="og:site_name" content="LapinHeureux" />
+        
+        <!-- Balises Meta Twitter Card pour les réseaux sociaux -->
+        <!-- <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Nourriture pour Lapins - LapinHeureux" />
+        <meta name="twitter:description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
+        <meta name="twitter:image" content="https://www.votre-site.com/assets/img/twitter-image.png" />
+        <meta name="twitter:site" content="@LapinHeureux" /> -->
+        
+        <!-- Favicon pour les navigateurs de bureau et mobiles -->
+        <!-- <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
+        <link id="favicon-mobile" rel="icon" type="image/png" href="./assets/img/lapin.png" media="(max-width: 768px)" /> -->
+        <link id="favicon-light" rel="icon" href="./assets/img/lapin blanc.png" type="image/png">
+        <link id="favicon-dark" rel="icon" href="./assets/img/lapin.png" type="image/png" media="(prefers-color-scheme: dark)">
+                
+        <!-- Fichier manifest pour les applications web progressives -->
+        <link rel="manifest" href="manifest.json" />
+        
+        <!-- Fichiers CSS pour le style du site -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+        </head>
+        
+    <body class="eau">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="./index.html"
+                    ><img src="./assets/img/lapin blanc.png" alt=""
+                /></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="nourriture.html">Nourriture</a>
+                        </li>
+                        <!-- <li class="nav-item">
                         <a class="nav-link" href="eau.html">Eau</a>
                     </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#meilleur">Meilleures Eaux</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#meilleur">Meilleures Eaux</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#eviter">Eau À Éviter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="soins.html">Soins Environnement et Jouets</a>
+                        </li>
+                    </ul>
+                    <center>
+                        <button class="btn-install ml-2" id="installButton" style="display: none">
+                            Installer
+                        </button>
+                    </center>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="eau">
+                <h2>Eau <img width="10%" src="./assets/img/eau.png" alt="" /></h2>
+                <ul>
+                    <li>
+                        Utilisez de l'eau filtrée ou de l'eau de source pour éviter les
+                        contaminants.
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#eviter">Eau À Éviter</a>
+                    <li>
+                        Évitez l'eau du robinet si elle est fortement chlorée ou contient des
+                        niveaux élevés de minéraux.
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="soins.html">Soins Environnement et Jouets</a>
+                    <li>Changez l'eau quotidiennement pour garantir sa fraîcheur.</li>
+                    <li>Assurez-vous que les récipients d'eau soient propres et sans algues.</li>
+                </ul>
+                <h3 id="meilleur">Meilleures Eaux pour les Lapins</h3>
+                <ul>
+                    <li>
+                        <strong>Eau du Robinet Filtrée</strong> : Utiliser un filtre à eau pour
+                        éliminer les impuretés, le chlore et les métaux lourds. Assurez-vous que
+                        l'eau du robinet est propre et potable dans votre région.
+                    </li>
+                    <li>
+                        <strong>Eau de Source</strong> : Eau de source embouteillée, non gazeuse,
+                        qui est naturellement pure et généralement sans additifs. Marques
+                        recommandées : Evian, Volvic.
+                    </li>
+                    <li>
+                        <strong>Eau Distillée</strong> : Eau purifiée par distillation, éliminant
+                        les minéraux et les impuretés. Utilisez cette eau avec modération, car une
+                        consommation excessive d'eau distillée peut entraîner une carence en
+                        minéraux chez les lapins.
+                    </li>
+                    <li>
+                        <strong>Eau Minérale Faible en Sodium</strong> : Eau minérale naturelle avec
+                        une faible teneur en sodium. Marques recommandées : Volvic (vérifiez
+                        toujours les niveaux de minéraux sur l'étiquette).
+                    </li>
+                    <li>
+                        <strong>Eau en Bouteille pour Animaux</strong> : Certaines marques offrent
+                        de l'eau spécialement conçue pour les animaux, souvent enrichie de
+                        nutriments bénéfiques. Assurez-vous que ces eaux sont sans additifs nocifs
+                        pour les lapins.
                     </li>
                 </ul>
-                <center>
-                    <button class="btn-install ml-2" id="installButton" style="display: none">
-                        Installer
-                    </button>
-                </center>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="eau">
-            <h2>Eau <img width="10%" src="./assets/img/eau.png" alt="" /></h2>
-            <ul>
-                <li>Utilisez de l'eau filtrée ou de l'eau de source pour éviter les contaminants.</li>
-                <li>Évitez l'eau du robinet si elle est fortement chlorée ou contient des niveaux élevés de minéraux.</li>
-                <li>Changez l'eau quotidiennement pour garantir sa fraîcheur.</li>
-                <li>Assurez-vous que les récipients d'eau soient propres et sans algues.</li>
-            </ul>
-            <h3 id="meilleur">Meilleures Eaux pour les Lapins</h3>
-            <ul>
-                <li><strong>Eau du Robinet Filtrée</strong> : Utiliser un filtre à eau pour éliminer les impuretés, le chlore et les métaux lourds. Assurez-vous que l'eau du robinet est propre et potable dans votre région.</li>
-                <li><strong>Eau de Source</strong> : Eau de source embouteillée, non gazeuse, qui est naturellement pure et généralement sans additifs. Marques recommandées : Evian, Volvic.</li>
-                <li><strong>Eau Distillée</strong> : Eau purifiée par distillation, éliminant les minéraux et les impuretés. Utilisez cette eau avec modération, car une consommation excessive d'eau distillée peut entraîner une carence en minéraux chez les lapins.</li>
-                <li><strong>Eau Minérale Faible en Sodium</strong> : Eau minérale naturelle avec une faible teneur en sodium. Marques recommandées : Volvic (vérifiez toujours les niveaux de minéraux sur l'étiquette).</li>
-                <li><strong>Eau en Bouteille pour Animaux</strong> : Certaines marques offrent de l'eau spécialement conçue pour les animaux, souvent enrichie de nutriments bénéfiques. Assurez-vous que ces eaux sont sans additifs nocifs pour les lapins.</li>
-            </ul>
-            <h3 id="eviter">À Éviter <img width="10%" src="./assets/img/attention.png" alt=""></h3>
-            <ul class="toxic">
-                <li>Eaux Gazeuses : Les eaux gazeuses peuvent causer des problèmes digestifs chez les lapins.</li>
-                <li>Eaux Enrichies en Minéraux : Certaines eaux minérales ont des niveaux élevés de certains minéraux qui peuvent ne pas être adaptés aux besoins des lapins.</li>
-                <li>Eaux avec Additifs : Évitez les eaux contenant des arômes, des colorants ou des édulcorants artificiels.</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>
-            Fais avec amour pour tous nos amis poilus <b style="color:red">&#9829;</b>
-            <br />fait par Florie <br /> &copy; 2024 Alimentation des Lapins
-        </p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="/assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function setFavicon() {
-            var faviconPc = document.getElementById("favicon-pc");
-            var faviconMobile = document.getElementById("favicon-mobile");
+                <h3 id="eviter">
+                    À Éviter <img width="10%" src="./assets/img/attention.png" alt="" />
+                </h3>
+                <ul class="toxic">
+                    <li>
+                        Eaux Gazeuses : Les eaux gazeuses peuvent causer des problèmes digestifs
+                        chez les lapins.
+                    </li>
+                    <li>
+                        Eaux Enrichies en Minéraux : Certaines eaux minérales ont des niveaux élevés
+                        de certains minéraux qui peuvent ne pas être adaptés aux besoins des lapins.
+                    </li>
+                    <li>
+                        Eaux avec Additifs : Évitez les eaux contenant des arômes, des colorants ou
+                        des édulcorants artificiels.
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <button onclick="scrollToTop()" id="scrollUpBtn" title="Haut de page">↑</button>
+        <footer>
+            <p>
+                Fais avec amour pour tous nos amis poilus <b style="color: red">&#9829;</b>
+                <br />fait par Florie <br />
+                &copy; 2024 Alimentation des Lapins
+            </p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="/assets/js/scroll-up.js"></script>
+        <script src="./assets/js/theme-switch.js"></script>
 
-            if (window.innerWidth <= 768) {
-                faviconPc.remove();
-                document.head.appendChild(faviconMobile);
-            } else {
-                faviconMobile.remove();
-                document.head.appendChild(faviconPc);
-            }
-        }
-        window.addEventListener("resize", setFavicon);
-        window.addEventListener("load", setFavicon);
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/sw.js").then(
-                function (registration) {
-                    console.log("Service Worker registration successful with scope: ", registration.scope);
-                },
-                function (error) {
-                    console.log("Service Worker registration failed: ", error);
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            function setFavicon() {
+                var faviconPc = document.getElementById("favicon-pc");
+                var faviconMobile = document.getElementById("favicon-mobile");
+
+                if (window.innerWidth <= 768) {
+                    faviconPc.remove();
+                    document.head.appendChild(faviconMobile);
+                } else {
+                    faviconMobile.remove();
+                    document.head.appendChild(faviconPc);
                 }
-            );
-        }
-        let deferredPrompt;
-        const installButton = document.getElementById("installButton");
-
-        window.addEventListener("beforeinstallprompt", (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installButton.style.display = "block";
-        });
-
-        installButton.addEventListener("click", () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === "accepted") {
-                        console.log("User accepted the A2HS prompt");
-                    } else {
-                        console.log("User dismissed the A2HS prompt");
-                    }
-                    deferredPrompt = null;
-                    installButton.style.display = "none";
-                });
             }
-        });
+            window.addEventListener("resize", setFavicon);
+            window.addEventListener("load", setFavicon);
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/sw.js").then(
+                    function (registration) {
+                        console.log(
+                            "Service Worker registration successful with scope: ",
+                            registration.scope
+                        );
+                    },
+                    function (error) {
+                        console.log("Service Worker registration failed: ", error);
+                    }
+                );
+            }
+            let deferredPrompt;
+            const installButton = document.getElementById("installButton");
 
-        window.addEventListener("appinstalled", () => {
-            console.log("PWA was installed");
-        });
-    </script>
-</body>
+            window.addEventListener("beforeinstallprompt", (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                installButton.style.display = "block";
+            });
+
+            installButton.addEventListener("click", () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === "accepted") {
+                            console.log("User accepted the A2HS prompt");
+                        } else {
+                            console.log("User dismissed the A2HS prompt");
+                        }
+                        deferredPrompt = null;
+                        installButton.style.display = "none";
+                    });
+                }
+            });
+
+            window.addEventListener("appinstalled", () => {
+                console.log("PWA was installed");
+            });
+        </script>
+    </body>
 </html>
