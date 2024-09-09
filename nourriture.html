@@ -40,7 +40,8 @@
         <!-- Fichiers CSS pour le style du site -->
         <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-        </head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    </head>
                 <style>
             /* Style pour la barre de navigation secondaire */
             .navbar-secondary {
@@ -466,6 +467,8 @@
                     <li><img src="./assets/img/à-éviter/ail.png" alt="" /> Ail</li>
                 </ul>
             </section>
+            <button id="downloadPdfBtn">Télécharger en PDF</button>
+
         </main>
         <button onclick="scrollToTop()" id="scrollUpBtn" title="Haut de page">↑</button>
         <footer>
@@ -481,6 +484,38 @@
         <script src="/assets/js/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
+                // Crée un nouveau PDF
+                const { PDFDocument, rgb } = PDFLib;
         
-    </body>
+                // Crée un nouveau document PDF
+                const pdfDoc = await PDFDocument.create();
+                const page = pdfDoc.addPage([600, 400]);
+                const { width, height } = page.getSize();
+        
+                // Ajoute du texte au PDF
+                page.drawText('Bonjour, monde!', {
+                    x: 50,
+                    y: height - 4 * 50,
+                    size: 30,
+                    color: rgb(0, 0, 0),
+                });
+        
+                // Sérialise le PDF en un tableau d'octets
+                const pdfBytes = await pdfDoc.save();
+        
+                // Crée un Blob et télécharge le fichier PDF
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'nourriture-pour-lapins.pdf';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            });
+        </script>
+        
+          </body>
 </html>

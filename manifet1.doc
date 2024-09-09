@@ -1,0 +1,42 @@
+
+  "name": "Alimentation des Lapins", 
+  // Nom complet de l'application. Ce nom s'affichera lorsque l'utilisateur ajoutera l'application à son écran d'accueil ou lors du lancement de l'application.
+
+  "short_name": "Lapins", 
+  // Nom abrégé de l'application, utilisé à la place du nom complet lorsque l'espace est limité (par exemple, sur l'écran d'accueil).
+
+  "start_url": "./index.html", 
+  // L'URL qui sera lancée lorsque l'utilisateur ouvrira l'application depuis l'écran d'accueil. Ici, c'est la page `index.html`.
+
+  "display": "standalone", 
+  // Mode d'affichage de l'application. "standalone" permet à l'application de se comporter comme une application native (sans barre d'adresse ni boutons de navigation).
+
+  "background_color": "#ffffff", 
+  // Couleur d'arrière-plan qui sera affichée pendant le chargement de l'application ou lorsque celle-ci est minimisée.
+
+  "theme_color": "#6ab04c", 
+  // Couleur principale de l'interface utilisateur, utilisée par le navigateur pour afficher la couleur de la barre d'état ou de l'en-tête de l'application.
+
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      // Chemin de l'icône en 192x192 pixels, utilisée pour les petits écrans ou appareils.
+
+      "sizes": "192x192", 
+      // Taille de l'icône en pixels (largeur x hauteur).
+
+      "type": "image/png" 
+      // Type du fichier de l'icône. Ici, c'est une image au format PNG.
+    },
+    {
+      "src": "icon-512x512.png",
+      // Chemin de l'icône en 512x512 pixels, utilisée pour les écrans plus grands ou dans certains contextes où une icône plus grande est nécessaire.
+
+      "sizes": "512x512", 
+      // Taille de l'icône en pixels (largeur x hauteur).
+
+      "type": "image/png" 
+      // Type du fichier de l'icône. Ici, c'est aussi une image au format PNG.
+    }
+  ]
+
