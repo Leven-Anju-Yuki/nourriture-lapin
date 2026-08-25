@@ -142,10 +142,6 @@ Quelques références utiles :
 
 Projet réalisé par **Florie** 💚
 
-## Licence
-
-Ajouter ici la licence choisie pour le projet si vous souhaitez autoriser explicitement sa réutilisation ou sa contribution.
-
 ## Export PDF
 
 La page `nourriture.html` propose deux accès au même export :
