@@ -1,522 +1,561 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <!-- Définition de l'encodage des caractères -->
-        <meta charset="UTF-8" />
-        <!-- Réglage de la fenêtre d'affichage pour une meilleure compatibilité mobile -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Titre de la page -->
-        <title>Nourriture pour Lapins - LapinHeureux</title>
-        
-        <!-- Balises Meta SEO -->
-        <meta name="description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
-        <meta name="keywords" content="nourriture pour lapins, alimentation lapins, légumes pour lapins, fruits pour lapins, herbes pour lapins, fleurs séchées, plantes séchées, LapinHeureux" />
-        <meta name="author" content="LapinHeureux" />
-        
-        <!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
-        <meta property="og:title" content="Nourriture pour Lapins - LapinHeureux" />
-        <meta property="og:description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://leven-anju-yuki.github.io/nourriture-lapin/index.html" />
-        <meta property="og:image" content="https://leven-anju-yuki.github.io/nourriture-lapin/assets/img/og-image.jpg" />
-        <meta property="og:site_name" content="LapinHeureux" />
-        
-        <!-- Balises Meta Twitter Card pour les réseaux sociaux -->
-        <!-- <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Nourriture pour Lapins - LapinHeureux" />
-        <meta name="twitter:description" content="Découvrez une liste complète des légumes, herbes, fruits, et autres aliments sains pour vos lapins, ainsi que ceux à éviter pour leur bien-être." />
-        <meta name="twitter:image" content="https://www.votre-site.com/assets/img/twitter-image.png" />
-        <meta name="twitter:site" content="@LapinHeureux" /> -->
-        
-        <!-- Favicon pour les navigateurs de bureau et mobiles -->
-        <!-- <link id="favicon-pc" rel="icon" type="image/png" href="./assets/img/lapin blanc.png" />
-        <link id="favicon-mobile" rel="icon" type="image/png" href="./assets/img/lapin.png" media="(max-width: 768px)" /> -->
-        <link id="favicon-light" rel="icon" href="./assets/img/lapin blanc.png" type="image/png">
-        <link id="favicon-dark" rel="icon" href="./assets/img/lapin.png" type="image/png" media="(prefers-color-scheme: dark)">
-                
-        <!-- Fichier manifest pour les applications web progressives -->
-        <link rel="manifest" href="manifest.json" />
-        
-        <!-- Fichiers CSS pour le style du site -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-    </head>
-                <style>
-            /* Style pour la barre de navigation secondaire */
-            .navbar-secondary {
-                position: fixed;
-                top: 7%; /* Ajustez selon la hauteur de votre navbar principale */
-            }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nourriture pour Lapins - LapinHeureux</title>
+  <meta name="description" content="Guide pratique de l'alimentation du lapin : foin, légumes, herbes, fruits, plantes et aliments à éviter." />
+  <meta name="author" content="LapinHeureux" />
 
-            /* Assurez-vous que les liens sont correctement espacés */
-            .navbar-secondary .nav-link {
-                padding: 10px;
-            }
+  <link id="favicon-light" rel="icon" href="./assets/img/lapin blanc.png" type="image/png">
+  <link id="favicon-dark" rel="icon" href="./assets/img/lapin.png" type="image/png" media="(prefers-color-scheme: dark)">
+  <script>
+    // Le manifest PWA n'est chargé que lorsque le site est servi par HTTP/HTTPS.
+    // Cela évite les erreurs CORS lorsque nourriture.html est ouvert directement en file://.
+    if (location.protocol === 'http:' || location.protocol === 'https:') {
+      const manifest = document.createElement('link');
+      manifest.rel = 'manifest';
+      manifest.href = './manifest.json';
+      document.head.appendChild(manifest);
+    }
+  </script>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
 
-            /* Style pour les sous-menus */
-            .nav-submenu {
-                display: none;
-                position: absolute;
-                background-color: #343a40;
-                padding: 10px;
-                border-radius: 5px;
-                z-index: 1040;
-            }
 
-            .nav-item:hover .nav-submenu {
-                display: block;
-            }
+  <style>
+    .navbar-secondary { position: fixed; top: 56px; }
+    .navbar-secondary .nav-link { padding: 10px; }
+    .nav-submenu { display: none; position: absolute; background-color: #343a40; padding: 10px; border-radius: 5px; z-index: 1040; min-width: 190px; }
+    .nav-item:hover .nav-submenu { display: block; }
+    .nav-submenu .nav-link { color: #fff; }
+    .nav-submenu .nav-link:hover { color: #ffc107; }
 
-            .nav-submenu .nav-link {
-                color: #fff;
-            }
+    .food-intro { background: #f4fbf1; border-left: 5px solid #6ab04c; padding: 16px; border-radius: 8px; margin-bottom: 24px; }
+    .food-intro strong { color: #3f7f2c; }
+    .food-note { display: block; margin-top: 4px; font-size: .92em; color: #555; }
+    .warning-box { background: #fff4e5; border-left: 5px solid #f57f00; padding: 14px; border-radius: 8px; margin: 18px 0; }
+    .danger-box { background: #ffeaea; border-left: 5px solid #c62828; padding: 14px; border-radius: 8px; margin: 18px 0; }
+    .pdf-actions { display: flex; justify-content: center; margin: 28px 0 10px; }
+    #downloadPdfBtn, #downloadPdfNavBtn { background: #007bff; color: #fff; border: 0; border-radius: 8px; padding: 12px 20px; font-weight: 700; cursor: pointer; }
+    #downloadPdfBtn:hover, #downloadPdfNavBtn:hover { background: #0056b3; }
+    #downloadPdfBtn:disabled, #downloadPdfNavBtn:disabled { opacity: .65; cursor: wait; }
+    #downloadPdfNavBtn { padding: 7px 12px; margin: 3px 8px; white-space: nowrap; font-size: .92rem; }
+    .pdf-header { display: none; }
 
-            .nav-submenu .nav-link:hover {
-                color: #ffc107;
-            }
-        </style>
-    </head>
-    <body class="nourritures">
-        <header>
-            <!-- Barre de navigation principale -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="./index.html"
-                    ><img src="./assets/img/lapin blanc.png" alt=""
-                /></a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="nourriture.html">Nourriture</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="eau.html">Eau</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="race-lapin.html">Races de Lapins</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="soins.html">Soins et Environnement</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <br /><br /><br />
-            <!-- Barre de navigation secondaire -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-secondary">
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSecondary"
-                    aria-controls="navbarSecondary"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSecondary">
-                    <ul class="navbar-nav">
-                        <li class="nav-item position-relative">
-                            <a class="nav-link" href="#legumes">Légumes</a>
-                            <div class="nav-submenu">
-                                <a class="nav-link" href="#legumes-feuilles">Légumes-feuilles</a>
-                                <a class="nav-link" href="#legumes-racines">Légumes racines</a>
-                                <a class="nav-link" href="#legumes-fruits">Légumes-fruits</a>
-                                <a class="nav-link" href="#autres-legumes">Autres légumes</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#herbes">Herbes Aromatiques</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#fruits">Fruits</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#herbes-graminees">Herbes et Graminées</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#fleurs-sechees">Fleurs Séchées</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#autres">Autres</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#eviter">À Éviter</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <section id="legumes">
-                <h2>
-                    Légumes
-                    <img
-                        width=" 20%"
-                        class="imgh2"
-                        src="./assets/img/legume-racine/carrote.png"
-                        alt=""
-                    />
-                </h2>
-                <!-- Section Légumes-feuilles -->
-                <h3 id="legumes-feuilles">
-                    Légumes-feuilles
-                    <img width=" 10%" src="./assets/img/legume-feuille/fenouil.png" alt="" />
-                </h3>
-                <ul>
-                    <li>
-                        <img src="./assets/img/legume-feuille/laitue.png" alt="" />Laitue romaine
-                        (éviter la laitue iceberg)
-                    </li>
-                    <li>
-                        <img src="./assets/img/legume-feuille/epinard.png" alt="" />Épinards (avec
-                        modération)
-                    </li>
-                    <li><img src="./assets/img/legume-feuille/cresson.png" alt="" />Cresson</li>
-                    <li><img src="./assets/img/legume-feuille/roquette.png" alt="" />Roquette</li>
-                    <li><img src="./assets/img/legume-feuille/pissenlit.png" alt="" />Pissenlit</li>
-                    <li><img src="./assets/img/legume-feuille/persil.png" alt="" />Persil</li>
-                    <li><img src="./assets/img/legume-feuille/coriandre.png" alt="" />Coriandre</li>
-                    <li>
-                        <img src="./assets/img/legume-feuille/menthe-poivree.png" alt="" />Menthe
-                    </li>
-                    <li><img src="./assets/img/legume-feuille/basilic.png" alt="" />Basilic</li>
-                    <li><img src="./assets/img/legume-feuille/fenouil.png" alt="" />Fenouil</li>
-                </ul>
-                <!-- Section Légumes racines -->
-                <h3 id="legumes-racines">
-                    Légumes racines
-                    <img width=" 10%" src="./assets/img/legume-racine/navet.png" alt="" />
-                </h3>
-                <ul>
-                    <li>
-                        <img src="./assets/img/legume-racine/carrote.png" alt="" /> Carottes (en
-                        petites quantités)
-                    </li>
-                    <li>
-                        <img src="./assets/img/legume-racine/navet.png" alt="" /> Navets (feuilles
-                        et racines)
-                    </li>
-                </ul>
-                <!-- Section Légumes-fruits -->
-                <h3 id="legumes-fruits">
-                    Légumes-fruits
-                    <img width=" 10%" src="./assets/img/legume-fruit/concombre.png" alt="" />
-                </h3>
-                <ul>
-                    <li><img src="./assets/img/legume-fruit/courgette.png" alt="" /> Courgettes</li>
-                    <li><img src="./assets/img/legume-fruit/concombre.png" alt="" /> Concombres</li>
-                    <li>
-                        <img src="./assets/img/legume-fruit/poivron.png" alt="" /> Poivrons (toutes
-                        les couleurs)
-                    </li>
-                    <li>
-                        <img src="./assets/img/legume-fruit/tomate.png" alt="" /> Tomates (avec
-                        modération, sans les feuilles et les tiges)
-                    </li>
-                </ul>
-                <!-- Section Autres légumes -->
-                <h3 id="autres-legumes">
-                    Autres légumes
-                    <img width=" 10%" src="./assets/img/autres legumes/celeri.png" alt="" />
-                </h3>
-                <ul>
-                    <li>
-                        <img src="./assets/img/autres legumes/brocoli.png" alt="" /> Brocoli
-                        (feuilles et tiges, éviter les fleurons en grande quantité)
-                    </li>
-                    <li><img src="./assets/img/autres legumes/celeri.png" alt="" /> Céleri</li>
-                    <li>
-                        <img src="./assets/img/autres legumes/bruxelles.png" alt="" /> Choux de
-                        Bruxelles
-                    </li>
-                    <li>
-                        <img src="./assets/img/autres legumes/chou-frise.png" alt="" /> Chou frisé
-                        (kale)
-                    </li>
-                    <li><img src="./assets/img/autres legumes/endive.png" alt="" /> Endives</li>
-                    <li>
-                        <img src="./assets/img/autres legumes/chou-rave.png" alt="" /> Chou-rave
-                        (feuilles et bulbe)
-                    </li>
-                    <li>
-                        <img src="./assets/img/autres legumes/radis.png" alt="" /> Radis (feuilles
-                        et racines, en petites quantités)
-                    </li>
-                </ul>
-            </section>
-            <section id="herbes">
-                <h2>
-                    Herbes aromatiques
-                    <img
-                        width=" 20%"
-                        class="imgh2"
-                        src="./assets/img/herbe-aromatique/aneth.png"
-                        alt=""
-                    />
-                </h2>
-                <ul>
-                    <li><img src="./assets/img/legume-feuille/persil.png" alt="" />Persil</li>
-                    <li><img src="./assets/img/legume-feuille/coriandre.png" alt="" />Coriandre</li>
-                    <li>
-                        <img src="./assets/img/legume-feuille/menthe-poivree.png" alt="" />Menthe
-                    </li>
-                    <li><img src="./assets/img/legume-feuille/basilic.png" alt="" />Basilic</li>
-                    <li>
-                        <img
-                            width=" 20%"
-                            src="./assets/img/herbe-aromatique/aneth.png"
-                            alt=""
-                        />Aneth
-                    </li>
-                    <li>
-                        <img width=" 20%" src="./assets/img/herbe-aromatique/thym.png" alt="" />Thym
-                    </li>
-                    <li>
-                        <img
-                            width=" 20%"
-                            src="./assets/img/herbe-aromatique/romarin.png"
-                            alt=""
-                        />Romarin
-                    </li>
-                    <li>
-                        <img
-                            width=" 20%"
-                            src="./assets/img/herbe-aromatique/origan.png"
-                            alt=""
-                        />Origan
-                    </li>
-                </ul>
-            </section>
-            <section id="fruits">
-                <h2>
-                    Fruits (en petites quantités)
-                    <img width=" 20%" class="imgh2" src="./assets/img/fruit/fraise.png" alt="" />
-                </h2>
-                <ul>
-                    <li>
-                        <img src="./assets/img/fruit/pomme.png" alt="" /> Pommes (sans les pépins)
-                    </li>
-                    <li><img src="./assets/img/fruit/banane.png" alt="" /> Bananes</li>
-                    <li><img src="./assets/img/fruit/fraise.png" alt="" /> Fraises</li>
-                    <li><img src="./assets/img/fruit/framboise.png" alt="" /> Framboises</li>
-                    <li><img src="./assets/img/fruit/mure.png" alt="" /> Mûres</li>
-                    <li><img src="./assets/img/fruit/myrtilles.png" alt="" /> Myrtilles</li>
-                    <li>
-                        <img src="./assets/img/fruit/poire.png" alt="" /> Poires (sans les pépins)
-                    </li>
-                    <li><img src="./assets/img/fruit/ananas.png" alt="" /> Ananas</li>
-                    <li><img src="./assets/img/fruit/mangue.png" alt="" /> Mangues</li>
-                    <li>
-                        <img src="./assets/img/fruit/peche.png" alt="" /> Pêches (sans le noyau)
-                    </li>
-                    <li>
-                        <img src="./assets/img/fruit/prune.png" alt="" /> Prunes (sans le noyau)
-                    </li>
-                    <li><img src="./assets/img/fruit/melon.png" alt="" /> Melon</li>
-                    <li>
-                        <img src="./assets/img/fruit/pasteque.png" alt="" /> Pastèque (sans les
-                        pépins)
-                    </li>
-                </ul>
-            </section>
-            <section id="herbes-graminees">
-                <h2>
-                    Herbes et graminées
-                    <img
-                        width=" 20%"
-                        class="imgh2"
-                        src="./assets/img/legume-feuille/pissenlit.png"
-                        alt=""
-                    />
-                </h2>
-                <ul>
-                    <li>
-                        <img src="./assets/img/Herbes-et-graminées/foins.png" alt="" /> Foin de
-                        prairie
-                    </li>
-                    <li>
-                        <img src="./assets/img/Herbes-et-graminées/foins.png" alt="" /> Foin de
-                        Timothy (foin de fléole des prés)
-                    </li>
-                    <li>
-                        <img src="./assets/img/Herbes-et-graminées/foins.png" alt="" /> Foin de
-                        luzerne (surtout pour les jeunes lapins)
-                    </li>
-                    <li>
-                        <img src="./assets/img/legume-feuille/pissenlit.png" alt="" /> Pissenlit
-                    </li>
-                    <li><img src="./assets/img/Herbes-et-graminées/trefle.png" alt="" /> Trèfle</li>
-                    <li>
-                        <img src="./assets/img/Herbes-et-graminées/ble.png" alt="" /> Herbe de blé
-                    </li>
-                </ul>
-            </section>
-            <!-- Section Fleurs Séchées -->
-            <section id="fleurs-sechees">
-                <h2>
-                    Fleurs Séchées
-                    <img
-                        width=" 20%"
-                        class="imgh2"
-                        src="./assets/img/fleurs-sechees/souci.png"
-                        alt=""
-                    />
-                </h2>
-                <ul>
-                    <li>
-                        <img src="./assets/img/legume-feuille/pissenlit.png" alt="" /> Pissenlit
-                    </li>
-                    <li><img src="./assets/img/fleurs-sechees/souci.png" alt="" /> Souci</li>
-                    <li><img src="./assets/img/fleurs-sechees/rose.png" alt="" /> Rose</li>
-                    <li>
-                        <img src="./assets/img/fleurs-sechees/camomille.png" alt="" /> Camomille
-                    </li>
-                    <li><img src="./assets/img/fleurs-sechees/lavande.png" alt="" /> Lavande</li>
-                    <li><img src="./assets/img/fleurs-sechees/hibiscus.png" alt="" /> Hibiscus</li>
-                    <li>
-                        <img src="./assets/img/fleurs-sechees/bleuets-bleue.png" alt="" /> Bleuet
-                        bleue
-                    </li>
-                    <li>
-                        <img src="./assets/img/fleurs-sechees/bleuet-rouge.jpg" alt="" /> Bleuet
-                        rouge
-                    </li>
-                    <li>
-                        <img src="./assets/img/fleurs-sechees/paquerette.png" alt="" /> Pâquerette
-                    </li>
-                    <li><img src="./assets/img/fleurs-sechees/mauve.png" alt="" /> Mauve</li>
-                </ul>
-            </section>
-            <section id="autres">
-                <h2>
-                    Autres
-                    <img
-                        width=" 20%"
-                        class="imgh2"
-                        src="./assets/img/Autres/feuilles-de-framboisiers.png"
-                        alt=""
-                    />
-                </h2>
-                <ul>
-                    <li>
-                        <img src="./assets/img/Autres/branche-de-pommier.png" alt="" /> Branches et
-                        feuilles de pommier (non traitées aux pesticides)
-                    </li>
-                    <li>
-                        <img src="./assets/img/Autres/branches-de-saule.png" alt="" /> Branches de
-                        saule
-                    </li>
-                    <li>
-                        <img src="./assets/img/Autres/branche-de-noisette.png" alt="" /> Branches de
-                        noisetier
-                    </li>
-                    <li>
-                        <img src="./assets/img/Autres/feuilles-de-framboisiers.png" alt="" />
-                        Feuilles de framboisier
-                    </li>
-                    <li>
-                        <img src="./assets/img/Autres/feuille de murier.png" alt="" /> Feuilles de
-                        mûrier
-                    </li>
-                    <li><img src="./assets/img/Autres/ortie.png" alt="" /> Ortie</li>
-                </ul>
-            </section>
-            <section id="eviter">
-                <h2>
-                    Aliments à éviter absolument
-                    <img
-                        width=" 20%"
-                        class="imgh2"
-                        src="./assets/img/à-éviter/chocolat.png"
-                        alt=""
-                    />
-                </h2>
-                <ul class="toxic">
-                    <li><img src="./assets/img/à-éviter/chocolat.png" alt="" /> Chocolat</li>
-                    <li>
-                        <img src="./assets/img/à-éviter/bouteille-de-lait.png" alt="" /> Produits
-                        laitiers
-                    </li>
-                    <li><img src="./assets/img/à-éviter/sucre.png" alt="" /> Aliments sucrés</li>
-                    <li><img src="./assets/img/à-éviter/gras.png" alt="" /> Aliments gras</li>
-                    <li><img src="./assets/img/à-éviter/sel.png" alt="" /> Aliments salés</li>
-                    <li>
-                        <img src="./assets/img/à-éviter/pomme-de-terre.png" alt="" /> Pommes de
-                        terre
-                    </li>
-                    <li><img src="./assets/img/à-éviter/rhubarbe.png" alt="" /> Rhubarbe</li>
-                    <li><img src="./assets/img/à-éviter/haricots-verts.png" alt="" /> Haricots</li>
-                    <li><img src="./assets/img/à-éviter/avocat.png" alt="" /> Avocat</li>
-                    <li><img src="./assets/img/à-éviter/oignon.png" alt="" /> Oignons</li>
-                    <li><img src="./assets/img/à-éviter/ail.png" alt="" /> Ail</li>
-                </ul>
-            </section>
-            <button id="downloadPdfBtn">Télécharger en PDF</button>
+    .food-legend {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin: 16px 0 22px;
+    }
+    .food-legend-item {
+      background: #f8f9fa;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font-size: .94em;
+    }
+    .food-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 8px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: .76em;
+      font-weight: 700;
+      line-height: 1.35;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .status-regular { background: #e9f8e5; color: #2f6f25; }
+    .status-moderation { background: #fff3d9; color: #8a5a00; }
+    .status-treat { background: #fff0f4; color: #a02d54; }
+    .status-forbidden { background: #ffe3e3; color: #a61b1b; }
+    .food-emoji {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+      font-size: 21px;
+      line-height: 1;
+      vertical-align: middle;
+    }
+    @media (max-width: 600px) {
+      .food-legend { grid-template-columns: 1fr; }
+      .food-status { margin-left: 4px; margin-top: 4px; }
+    }
 
-        </main>
-        <button onclick="scrollToTop()" id="scrollUpBtn" title="Haut de page">↑</button>
-        <footer>
-            <p>
-                Fait avec amour pour tous nos amis poilus <b style="color: red">&#9829;</b><br />
-Fait par Florie <br />
-&copy; 2024 Alimentation des Lapins
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
 
-            </p>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="/assets/js/scroll-up.js"></script>
-        <script src="./assets/js/theme-switch.js"></script>
-        <script src="/assets/js/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script>
-            document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
-                // Crée un nouveau PDF
-                const { PDFDocument, rgb } = PDFLib;
-        
-                // Crée un nouveau document PDF
-                const pdfDoc = await PDFDocument.create();
-                const page = pdfDoc.addPage([600, 400]);
-                const { width, height } = page.getSize();
-        
-                // Ajoute du texte au PDF
-                page.drawText('Bonjour, monde!', {
-                    x: 50,
-                    y: height - 4 * 50,
-                    size: 30,
-                    color: rgb(0, 0, 0),
-                });
-        
-                // Sérialise le PDF en un tableau d'octets
-                const pdfBytes = await pdfDoc.save();
-        
-                // Crée un Blob et télécharge le fichier PDF
-                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'nourriture-pour-lapins.pdf';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            });
-        </script>
-        
-          </body>
+    @media print {
+      html, body {
+        background: #ffffff !important;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        font-size: 11pt;
+      }
+
+      header, footer, #scrollUpBtn, .pdf-actions, .navbar, .navbar-secondary {
+        display: none !important;
+      }
+
+      main {
+        box-shadow: none !important;
+        margin: 0 !important;
+        max-width: none !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+      }
+
+      .pdf-header {
+        display: block;
+        background: linear-gradient(135deg, #f4fbf1, #eafaf1) !important;
+        border: 2px solid #6ab04c;
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin: 0 0 14px 0;
+      }
+
+      .pdf-header h1 {
+        margin: 0 0 4px 0;
+        color: #2f6f25 !important;
+        font-size: 22pt;
+      }
+
+      .pdf-header p {
+        margin: 0;
+        color: #4d4d4d !important;
+      }
+
+      .food-intro,
+      .warning-box,
+      .danger-box,
+      .food-legend,
+      section {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      section {
+        margin-bottom: 14px;
+      }
+
+      h2 {
+        background: #f4fbf1 !important;
+        border: none !important;
+        border-left: 6px solid #6ab04c !important;
+        border-radius: 10px;
+        padding: 10px 12px !important;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        background: #fff4e5 !important;
+        border-left: 4px solid #f57f00 !important;
+        border-radius: 8px;
+        padding: 8px 10px !important;
+        margin-bottom: 10px;
+      }
+
+      ul li {
+        background: #eafaf1 !important;
+        border: 1px solid #d9f0df;
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      .toxic li {
+        background: #ffe6e6 !important;
+        border: 1px solid #f6cccc;
+        color: #a61b1b !important;
+      }
+
+      .food-status {
+        border: 1px solid rgba(0,0,0,0.08);
+      }
+
+      img {
+        max-height: 28px;
+      }
+
+      a[href]:after {
+        content: '' !important;
+      }
+    }
+  </style>
+</head>
+<body class="nourritures">
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="./index.html"><img src="./assets/img/lapin blanc.png" alt="LapinHeureux" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="nourriture.html">Nourriture</a></li>
+          <li class="nav-item"><a class="nav-link" href="eau.html">Eau</a></li>
+          <li class="nav-item"><a class="nav-link" href="race-lapin.html">Races de Lapins</a></li>
+          <li class="nav-item"><a class="nav-link" href="soins.html">Soins et Environnement</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-secondary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSecondary" aria-controls="navbarSecondary" aria-expanded="false" aria-label="Ouvrir le sommaire">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSecondary">
+        <ul class="navbar-nav">
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="#legumes">Légumes</a>
+            <div class="nav-submenu">
+              <a class="nav-link" href="#legumes-feuilles">Légumes-feuilles</a>
+              <a class="nav-link" href="#legumes-racines">Légumes racines</a>
+              <a class="nav-link" href="#legumes-fruits">Légumes-fruits</a>
+              <a class="nav-link" href="#autres-legumes">Autres légumes</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#herbes">Herbes aromatiques</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fruits">Fruits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#herbes-graminees">Foin et graminées</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fleurs-sechees">Fleurs séchées</a></li>
+          <li class="nav-item"><a class="nav-link" href="#autres">Branches et feuilles</a></li>
+          <li class="nav-item"><a class="nav-link" href="#eviter">À éviter</a></li>
+          <li class="nav-item"><button id="downloadPdfNavBtn" type="button" title="Télécharger la fiche complète en PDF">🖨️ PDF</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="pdf-content">
+    <div class="pdf-header">
+      <h1>Guide de l'alimentation du lapin</h1>
+      <p>LapinHeureux - fiche pratique</p>
+    </div>
+
+    <section class="food-intro" id="repères">
+      <h2>Les repères essentiels</h2>
+      <p><strong>Le foin ou l'herbe constitue la base de l'alimentation et doit être disponible à volonté.</strong> Les légumes-feuilles et herbes fraîches apportent de la variété, tandis que les granulés complets restent une petite partie de la ration.</p>
+      <ul>
+        <li><strong>Foin / herbe :</strong> à volonté, propre, sec, non poussiéreux et sans moisissure.</li>
+        <li><strong>Verdure :</strong> privilégier plusieurs légumes-feuilles et herbes variés.</li>
+        <li><strong>Granulés :</strong> petite ration mesurée, sans mélange type muesli.</li>
+        <li><strong>Fruits et carotte :</strong> friandises occasionnelles, car plus sucrées.</li>
+        <li><strong>Eau :</strong> fraîche et propre en permanence.</li>
+      </ul>
+      <p class="food-note">Tout nouvel aliment doit être introduit progressivement. En cas de baisse d'appétit, d'arrêt des crottes, de diarrhée ou de comportement inhabituel, contactez rapidement un vétérinaire connaissant bien les lapins.</p>
+    </section>
+
+    <div class="food-legend" aria-label="Légende des fréquences">
+      <div class="food-legend-item">🟢 <strong>Régulièrement</strong> : adapté dans une alimentation variée.</div>
+      <div class="food-legend-item">🟠 <strong>À modérer</strong> : petite quantité ou rotation conseillée.</div>
+      <div class="food-legend-item">🍓 <strong>Friandise</strong> : occasionnellement seulement.</div>
+      <div class="food-legend-item">🔴 <strong>À ne pas donner</strong> : aliment déconseillé ou potentiellement dangereux.</div>
+    </div>
+
+    <section id="legumes">
+      <h2>Légumes <img width="20%" class="imgh2" src="./assets/img/legume-racine/carrote.png" alt="Carotte" /></h2>
+
+      <h3 id="legumes-feuilles">Légumes-feuilles <img width="10%" src="./assets/img/legume-feuille/fenouil.png" alt="Fenouil" /></h3>
+      <ul>
+        <li><img src="./assets/img/legume-feuille/laitue.png" alt="" />Laitue romaine <span class="food-note">Bonne verdure de rotation. Éviter la laitue iceberg, pauvre sur le plan nutritionnel.</span></li>
+        <li><img src="./assets/img/legume-feuille/epinard.png" alt="" />Épinards <span class="food-note">À donner seulement occasionnellement en raison de leur teneur en oxalates.</span></li>
+        <li><img src="./assets/img/legume-feuille/cresson.png" alt="" />Cresson</li>
+        <li><img src="./assets/img/legume-feuille/roquette.png" alt="" />Roquette</li>
+        <li><img src="./assets/img/legume-feuille/pissenlit.png" alt="" />Pissenlit <span class="food-note">Feuilles et fleurs, uniquement si la plante est bien identifiée et non traitée.</span></li>
+        <li><img src="./assets/img/legume-feuille/persil.png" alt="" />Persil <span class="food-note">Sûr, mais à faire tourner avec d'autres herbes.</span></li>
+        <li><img src="./assets/img/legume-feuille/coriandre.png" alt="" />Coriandre</li>
+        <li><img src="./assets/img/legume-feuille/menthe-poivree.png" alt="" />Menthe</li>
+        <li><img src="./assets/img/legume-feuille/basilic.png" alt="" />Basilic</li>
+        <li><img src="./assets/img/legume-feuille/fenouil.png" alt="" />Fenouil</li>
+        <li>Mâche</li>
+        <li>Fanes de carottes</li>
+        <li>Fanes de radis</li>
+        <li>Feuilles de betterave <span class="food-note">À intégrer dans une rotation variée.</span></li>
+        <li>Pak choï <span class="food-note">À proposer en quantité raisonnable, comme les autres brassicacées.</span></li>
+      </ul>
+
+      <h3 id="legumes-racines">Légumes racines <img width="10%" src="./assets/img/legume-racine/navet.png" alt="Navet" /></h3>
+      <ul>
+        <li><img src="./assets/img/legume-racine/carrote.png" alt="" />Carotte <span class="food-note">Petite quantité seulement : la racine est relativement sucrée. Les fanes sont préférables.</span></li>
+        <li><img src="./assets/img/legume-racine/navet.png" alt="" />Navet <span class="food-note">Feuilles et racine, en variant avec d'autres végétaux.</span></li>
+        <li>Céleri-rave</li>
+        <li>Panais <span class="food-note">Plutôt comme friandise occasionnelle.</span></li>
+        <li>Rutabaga <span class="food-note">Petite portion, en rotation.</span></li>
+      </ul>
+
+      <h3 id="legumes-fruits">Légumes-fruits <img width="10%" src="./assets/img/legume-fruit/concombre.png" alt="Concombre" /></h3>
+      <ul>
+        <li><img src="./assets/img/legume-fruit/courgette.png" alt="" />Courgette <span class="food-note">La fleur peut aussi être consommée ; éviter les feuilles de la plante.</span></li>
+        <li><img src="./assets/img/legume-fruit/concombre.png" alt="" />Concombre</li>
+        <li><img src="./assets/img/legume-fruit/poivron.png" alt="" />Poivron <span class="food-note">Petite quantité ; retirer pédoncule, graines et parties blanches.</span></li>
+        <li><img src="./assets/img/legume-fruit/tomate.png" alt="" />Tomate mûre <span class="food-note">Uniquement la chair, occasionnellement. Ne jamais donner feuilles ni tiges.</span></li>
+        <li>Citrouille / potiron <span class="food-note">Petite quantité, sans graines ni peau dure.</span></li>
+        <li>Courges</li>
+      </ul>
+
+      <h3 id="autres-legumes">Autres légumes <img width="10%" src="./assets/img/autres legumes/celeri.png" alt="Céleri" /></h3>
+      <ul>
+        <li><img src="./assets/img/autres legumes/brocoli.png" alt="" />Brocoli <span class="food-note">Feuilles et tiges ; introduire progressivement car certains lapins sont sensibles aux brassicacées.</span></li>
+        <li><img src="./assets/img/autres legumes/celeri.png" alt="" />Céleri <span class="food-note">Couper les longues fibres en petits tronçons.</span></li>
+        <li><img src="./assets/img/autres legumes/bruxelles.png" alt="" />Choux de Bruxelles <span class="food-note">Avec modération et en rotation.</span></li>
+        <li><img src="./assets/img/autres legumes/chou-frise.png" alt="" />Chou frisé (kale) <span class="food-note">Avec modération et en rotation.</span></li>
+        <li><img src="./assets/img/autres legumes/endive.png" alt="" />Endive</li>
+        <li><img src="./assets/img/autres legumes/chou-rave.png" alt="" />Chou-rave <span class="food-note">Feuilles et bulbe.</span></li>
+        <li><img src="./assets/img/autres legumes/radis.png" alt="" />Radis <span class="food-note">Feuilles et petite quantité de racine.</span></li>
+        <li>Chou-fleur <span class="food-note">Feuilles et petite quantité du légume.</span></li>
+        <li>Asperge</li>
+        <li>Haricots verts <span class="food-note">En petite quantité. À ne pas confondre avec les haricots secs/graines, qui ne conviennent pas.</span></li>
+      </ul>
+    </section>
+
+    <section id="herbes">
+      <h2>Herbes aromatiques <img width="20%" class="imgh2" src="./assets/img/herbe-aromatique/aneth.png" alt="Aneth" /></h2>
+      <ul>
+        <li><img src="./assets/img/legume-feuille/persil.png" alt="" />Persil</li>
+        <li><img src="./assets/img/legume-feuille/coriandre.png" alt="" />Coriandre</li>
+        <li><img src="./assets/img/legume-feuille/menthe-poivree.png" alt="" />Menthe</li>
+        <li><img src="./assets/img/legume-feuille/basilic.png" alt="" />Basilic</li>
+        <li><img src="./assets/img/herbe-aromatique/aneth.png" alt="" />Aneth</li>
+        <li><img src="./assets/img/herbe-aromatique/thym.png" alt="" />Thym</li>
+        <li><img src="./assets/img/herbe-aromatique/romarin.png" alt="" />Romarin <span class="food-note">À proposer en petite quantité à cause de son goût très aromatique.</span></li>
+        <li><img src="./assets/img/herbe-aromatique/origan.png" alt="" />Origan</li>
+      </ul>
+    </section>
+
+    <section id="fruits">
+      <h2>Fruits - friandises occasionnelles <img width="20%" class="imgh2" src="./assets/img/fruit/fraise.png" alt="Fraise" /></h2>
+      <div class="warning-box"><strong>À retenir :</strong> les fruits sont riches en sucres. Donner seulement un petit morceau, occasionnellement, et pas plusieurs fruits sucrés le même jour.</div>
+      <ul>
+        <li><img src="./assets/img/fruit/pomme.png" alt="" />Pomme <span class="food-note">Sans pépins ni trognon.</span></li>
+        <li><img src="./assets/img/fruit/banane.png" alt="" />Banane <span class="food-note">Très sucrée : toute petite portion.</span></li>
+        <li><img src="./assets/img/fruit/fraise.png" alt="" />Fraise</li>
+        <li><img src="./assets/img/fruit/framboise.png" alt="" />Framboise</li>
+        <li><img src="./assets/img/fruit/mure.png" alt="" />Mûre</li>
+        <li><img src="./assets/img/fruit/myrtilles.png" alt="" />Myrtille</li>
+        <li><img src="./assets/img/fruit/poire.png" alt="" />Poire <span class="food-note">Sans pépins.</span></li>
+        <li><img src="./assets/img/fruit/ananas.png" alt="" />Ananas <span class="food-note">Chair fraîche uniquement, petite portion.</span></li>
+        <li><img src="./assets/img/fruit/mangue.png" alt="" />Mangue <span class="food-note">Sans noyau et en petite quantité.</span></li>
+        <li><img src="./assets/img/fruit/peche.png" alt="" />Pêche <span class="food-note">Sans noyau.</span></li>
+        <li><img src="./assets/img/fruit/prune.png" alt="" />Prune <span class="food-note">Sans noyau.</span></li>
+        <li><img src="./assets/img/fruit/melon.png" alt="" />Melon <span class="food-note">Sans pépins, petite portion.</span></li>
+        <li><img src="./assets/img/fruit/pasteque.png" alt="" />Pastèque <span class="food-note">Sans pépins, petite portion.</span></li>
+      </ul>
+    </section>
+
+    <section id="herbes-graminees">
+      <h2>Foin, herbes et graminées <img width="20%" class="imgh2" src="./assets/img/legume-feuille/pissenlit.png" alt="Pissenlit" /></h2>
+      <ul>
+        <li><img src="./assets/img/Herbes-et-graminées/foins.png" alt="" />Foin de prairie <span class="food-note">À volonté : il doit être vert, odorant, sec et sans poussière ni moisissure.</span></li>
+        <li><img src="./assets/img/Herbes-et-graminées/foins.png" alt="" />Foin de fléole des prés (Timothy) <span class="food-note">Excellent foin de base pour un lapin adulte.</span></li>
+        <li><img src="./assets/img/Herbes-et-graminées/foins.png" alt="" />Foin de luzerne <span class="food-note">Plus riche ; surtout adapté aux jeunes lapins en croissance ou selon recommandation vétérinaire.</span></li>
+        <li>Herbe fraîche <span class="food-note">Propre, non traitée, introduite progressivement. Ne pas donner de tontes de gazon.</span></li>
+        <li><img src="./assets/img/legume-feuille/pissenlit.png" alt="" />Pissenlit</li>
+        <li><img src="./assets/img/Herbes-et-graminées/trefle.png" alt="" />Trèfle <span class="food-note">En petite quantité et dans un mélange varié.</span></li>
+        <li><img src="./assets/img/Herbes-et-graminées/ble.png" alt="" />Herbe de blé</li>
+      </ul>
+    </section>
+
+    <section id="fleurs-sechees">
+      <h2>Fleurs séchées <img width="20%" class="imgh2" src="./assets/img/fleurs-sechees/souci.png" alt="Souci" /></h2>
+      <p class="food-note">Uniquement des fleurs correctement identifiées, non traitées, destinées à la consommation et parfaitement sèches.</p>
+      <ul>
+        <li><img src="./assets/img/legume-feuille/pissenlit.png" alt="" />Pissenlit</li>
+        <li><img src="./assets/img/fleurs-sechees/souci.png" alt="" />Souci / calendula</li>
+        <li><img src="./assets/img/fleurs-sechees/rose.png" alt="" />Rose <span class="food-note">Pétales non traités.</span></li>
+        <li><img src="./assets/img/fleurs-sechees/camomille.png" alt="" />Camomille</li>
+        <li><img src="./assets/img/fleurs-sechees/lavande.png" alt="" />Lavande <span class="food-note">Petite quantité.</span></li>
+        <li><img src="./assets/img/fleurs-sechees/hibiscus.png" alt="" />Hibiscus</li>
+        <li><img src="./assets/img/fleurs-sechees/bleuets-bleue.png" alt="" />Bleuet</li>
+        <li><img src="./assets/img/fleurs-sechees/paquerette.png" alt="" />Pâquerette</li>
+        <li><img src="./assets/img/fleurs-sechees/mauve.png" alt="" />Mauve</li>
+      </ul>
+    </section>
+
+    <section id="autres">
+      <h2>Branches, feuilles et plantes <img width="20%" class="imgh2" src="./assets/img/Autres/feuilles-de-framboisiers.png" alt="Feuilles de framboisier" /></h2>
+      <ul>
+        <li><img src="./assets/img/Autres/branche-de-pommier.png" alt="" />Branches et feuilles de pommier <span class="food-note">Non traitées et bien lavées.</span></li>
+        <li><img src="./assets/img/Autres/branches-de-saule.png" alt="" />Branches de saule</li>
+        <li><img src="./assets/img/Autres/branche-de-noisette.png" alt="" />Branches de noisetier</li>
+        <li><img src="./assets/img/Autres/feuilles-de-framboisiers.png" alt="" />Feuilles de framboisier</li>
+        <li><img src="./assets/img/Autres/feuille de murier.png" alt="" />Feuilles de mûrier</li>
+        <li><img src="./assets/img/Autres/ortie.png" alt="" />Ortie <span class="food-note">De préférence séchée/flétrie et correctement identifiée.</span></li>
+      </ul>
+    </section>
+
+    <section id="eviter">
+      <h2>Aliments à éviter absolument <img width="20%" class="imgh2" src="./assets/img/à-éviter/chocolat.png" alt="Chocolat" /></h2>
+      <div class="danger-box"><strong>Attention :</strong> cette liste n'est pas exhaustive. Si vous ne pouvez pas identifier avec certitude une plante ou un aliment, ne le donnez pas.</div>
+      <ul class="toxic">
+        <li><img src="./assets/img/à-éviter/chocolat.png" alt="" />Chocolat</li>
+        <li><img src="./assets/img/à-éviter/bouteille-de-lait.png" alt="" />Produits laitiers et friandises au yaourt</li>
+        <li><img src="./assets/img/à-éviter/sucre.png" alt="" />Confiseries, biscuits et aliments très sucrés</li>
+        <li><img src="./assets/img/à-éviter/gras.png" alt="" />Aliments gras et aliments humains transformés</li>
+        <li><img src="./assets/img/à-éviter/sel.png" alt="" />Aliments très salés</li>
+        <li><img src="./assets/img/à-éviter/pomme-de-terre.png" alt="" />Pommes de terre et leurs feuilles</li>
+        <li><img src="./assets/img/à-éviter/rhubarbe.png" alt="" />Rhubarbe</li>
+        <li>Haricots secs, graines de haricots et légumineuses sèches</li>
+        <li><img src="./assets/img/à-éviter/avocat.png" alt="" />Avocat</li>
+        <li><img src="./assets/img/à-éviter/oignon.png" alt="" />Oignon, échalote et ciboulette</li>
+        <li><img src="./assets/img/à-éviter/ail.png" alt="" />Ail</li>
+        <li>Feuilles et tiges de tomate</li>
+        <li>Aubergine et piments forts</li>
+        <li>Mélanges type muesli riches en céréales/graines</li>
+        <li>Tontes de gazon <span class="food-note">Elles fermentent très vite et peuvent être dangereuses.</span></li>
+      </ul>
+    </section>
+
+    <section id="conseils-finaux">
+      <h2>Conseils pratiques</h2>
+      <ul>
+        <li>Introduire un nouvel aliment à la fois, progressivement.</li>
+        <li>Laver les végétaux et éviter les zones traitées, les bords de route et les endroits souillés.</li>
+        <li>Varier les légumes-feuilles et les herbes au cours de la semaine.</li>
+        <li>Surveiller l'appétit, les crottes et le poids du lapin.</li>
+        <li>Adapter la ration à l'âge, au poids, à l'activité et à l'état de santé avec l'aide d'un vétérinaire si nécessaire.</li>
+      </ul>
+    </section>
+
+    <div class="pdf-actions" data-html2canvas-ignore="true">
+      <button id="downloadPdfBtn" type="button">🖨️ Télécharger / imprimer la fiche en PDF</button>
+    </div>
+  </main>
+
+  <button onclick="scrollToTop()" id="scrollUpBtn" title="Haut de page">↑</button>
+  <footer>
+    <p>Fait avec amour pour tous nos amis poilus <b style="color:red">&#9829;</b><br />Fait par Florie<br />&copy; 2024-2026 Alimentation des Lapins</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="./assets/js/scroll-up.js"></script>
+  <script src="./assets/js/theme-switch.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const normalize = (text) => text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .trim();
+
+      const treatFoods = [
+        'carotte', 'panais', 'rutabaga', 'pomme', 'banane', 'fraise', 'framboise',
+        'mure', 'myrtille', 'poire', 'ananas', 'mangue', 'peche', 'prune',
+        'melon', 'pasteque'
+      ];
+      const moderationFoods = [
+        'epinard', 'tomate', 'poivron', 'citrouille', 'potiron', 'courge', 'brocoli',
+        'chou', 'radis', 'betterave', 'pak choi', 'celeri-rave', 'navet',
+        'asperge', 'haricot vert', 'trefle', 'lavande', 'ortie', 'luzerne'
+      ];
+
+      const sectionDefaults = {
+        legumes: ['🟢', 'Régulièrement', 'status-regular'],
+        herbes: ['🟢', 'Régulièrement', 'status-regular'],
+        fruits: ['🍓', 'Friandise', 'status-treat'],
+        'herbes-graminees': ['🟢', 'Régulièrement', 'status-regular'],
+        'fleurs-sechees': ['🟠', 'À modérer', 'status-moderation'],
+        autres: ['🟢', 'Régulièrement', 'status-regular'],
+        eviter: ['🔴', 'À ne pas donner', 'status-forbidden']
+      };
+
+      const sectionEmoji = {
+        legumes: '🥬',
+        herbes: '🌿',
+        fruits: '🍓',
+        'herbes-graminees': '🌾',
+        'fleurs-sechees': '🌼',
+        autres: '🌿',
+        eviter: '⛔'
+      };
+
+      document.querySelectorAll('#legumes li, #herbes li, #fruits li, #herbes-graminees li, #fleurs-sechees li, #autres li, #eviter li').forEach((li) => {
+        const section = li.closest('section');
+        if (!section) return;
+        const sectionId = section.id;
+        const text = normalize(li.childNodes.length ? li.textContent : '');
+
+        let status = sectionDefaults[sectionId] || ['🟢', 'Régulièrement', 'status-regular'];
+        if (sectionId !== 'eviter') {
+          if (text.includes('fanes de')) {
+            status = ['🟢', 'Régulièrement', 'status-regular'];
+          } else if (treatFoods.some(food => text.includes(food))) {
+            status = ['🍓', 'Friandise', 'status-treat'];
+          } else if (moderationFoods.some(food => text.includes(food))) {
+            status = ['🟠', 'À modérer', 'status-moderation'];
+          }
+        }
+
+        if (!li.querySelector('.food-status')) {
+          const badge = document.createElement('span');
+          badge.className = `food-status ${status[2]}`;
+          badge.textContent = `${status[0]} ${status[1]}`;
+          const note = li.querySelector('.food-note');
+          if (note) li.insertBefore(badge, note);
+          else li.appendChild(badge);
+        }
+
+        const image = li.querySelector('img');
+        const addEmoji = () => {
+          if (li.querySelector('.food-emoji')) return;
+          const emoji = document.createElement('span');
+          emoji.className = 'food-emoji';
+          emoji.setAttribute('aria-hidden', 'true');
+          emoji.textContent = sectionEmoji[sectionId] || '🌱';
+          li.insertBefore(emoji, li.firstChild);
+        };
+
+        if (!image) {
+          addEmoji();
+        } else {
+          image.addEventListener('error', () => {
+            image.remove();
+            addEmoji();
+          }, { once: true });
+          if (image.complete && image.naturalWidth === 0) {
+            image.remove();
+            addEmoji();
+          }
+        }
+      });
+
+      const pdfButtons = [
+        document.getElementById('downloadPdfBtn'),
+        document.getElementById('downloadPdfNavBtn')
+      ].filter(Boolean);
+
+      let printHintShown = false;
+
+      function launchPrintPdf() {
+        if (!printHintShown) {
+          alert("Une fenêtre d'impression va s'ouvrir. Choisissez 'Enregistrer au format PDF'. Si votre navigateur propose l'option 'Arrière-plans graphiques', laissez-la activée pour garder les couleurs.");
+          printHintShown = true;
+        }
+        window.print();
+      }
+
+      pdfButtons.forEach(btn => btn.addEventListener('click', launchPrintPdf));
+    });
+  </script>
+  </script>
+</body>
 </html>

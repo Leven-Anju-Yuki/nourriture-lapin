@@ -278,3 +278,44 @@ footer {
 }
 
 /*------------ FIN DE LA PARTIE TABLETTE ------------*/
+
+/* --- Compléments pour la fiche alimentation et l'export PDF --- */
+.food-intro,
+.warning-box,
+.danger-box {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.food-note {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.92em;
+    line-height: 1.35;
+    color: #555;
+}
+
+#pdf-content li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.pdf-actions {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+@media print {
+    .navbar,
+    footer,
+    #scrollUpBtn,
+    .pdf-actions {
+        display: none !important;
+    }
+
+    main {
+        max-width: none;
+        margin: 0;
+        box-shadow: none;
+    }
+}
